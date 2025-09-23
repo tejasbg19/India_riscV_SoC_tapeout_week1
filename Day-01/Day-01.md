@@ -138,7 +138,10 @@ As seen in the cloned directory:
 - The folder `lib` contains the **Liberty file** `sky130_fd_sc_hd__tt_025C_1v80.lib`, which will be passed to Yosys for mapping the standard cells of the **SkyWater 130nm PDK**.  
 - The folder `verilog_files` provides various example designs such as `mux.v`, `demux.v`, and `counter.v`.  
 
-The user can either synthesize any of these example `.v` files or create their own Verilog design. During synthesis, the absolute path of the Liberty file must be provided to Yosys to correctly map the RTL to technology-specific standard cells.
+[copy iamge](https:/copy.com)
+
+The user can either synthesize any of these example `.v` files or create their own Verilog design. During synthesis, the absolute path of the Liberty file must be provided to Yosys to correctly map the RTL to technology-specific standard cells. Alternatively, the user can copy the `.lib` file into the directory containing their design files and pass it directly to Yosys for synthesis.
+
 
 
 
