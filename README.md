@@ -1,9 +1,22 @@
-# RISC‑V Reference SoC Tapeout Program- Week 1
+# RISC-V Reference SoC Tapeout Program – Week 1
 
 This repository covers the basics of Verilog simulation using Icarus Verilog, and introduces RTL synthesis with Yosys. It includes tasks such as writing simple Verilog designs and testbenches, running simulations, analyzing waveforms, and synthesizing designs into gate-level netlists.
 
+---
 
+## Daily Progress
 
+| Day | Task Overview                                    | Details & Documents         |
+|-----|--------------------------------------------------|-----------------------------|
+| 1   | Introduction to Verilog & testbench simulation   | [Day 1](./Day1/Day1.md)     |
+| 2   | Basic logic design & waveform analysis in GTKWave| [Day 2](./Day2/Day2.md)     |
+| 3   | Sequential circuits: Flip-flops & counters       | [Day 3](./Day3/Day3.md)     |
+| 4   | RTL synthesis basics with Yosys                  | [Day 4](./Day4/Day4.md)     |
+| 5   | Gate-level simulation (GLS) & comparison with RTL| [Day 5](./Day5/Day5.md)     |
 
+---
 
-
+📂 Each day has its own folder (`Day1`, `Day2`, …) with:
+- A `Day<num>.md` file (your notes, explanations, tasks).  
+- Any Verilog source (`.v`) and testbench files (`_tb.v`).  
+- Screenshots, waveforms, or results (if needed).  
