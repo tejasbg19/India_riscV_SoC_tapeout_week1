@@ -122,6 +122,14 @@ For this workshop, the required `.lib` files can be obtained by cloning the repo
 $ git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop
 $ cd sky130RTLDesignAndSynthesisWorkshop
 ```
+![Cloned Folder Contents](https://iimages-will-be-here.com)
+
+As seen in the cloned directory:
+
+- The folder `lib` contains the **Liberty file** `sky130_fd_sc_hd__tt_025C_1v80.lib`, which will be passed to Yosys for mapping the standard cells of the **SkyWater 130nm PDK**.  
+- The folder `verilog_files` provides various example designs such as `mux.v`, `demux.v`, and `counter.v`.  
+
+The user can either synthesize any of these example `.v` files or create their own Verilog design. During synthesis, the absolute path of the Liberty file must be provided to Yosys to correctly map the RTL to technology-specific standard cells.
 
 
 
