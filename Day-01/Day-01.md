@@ -3,7 +3,7 @@
 
 Simulation is the process of using software tools to mimic and verify the behavior of a digital circuit described in RTL (usually Verilog or VHDL), before hardware is built.
 
-![Simulation Block Diagram](./Images/Simulation_blk.png)
+![Simulation Block Diagram](./Images/simulation_blk.png)
 
 
 
