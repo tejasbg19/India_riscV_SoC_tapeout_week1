@@ -102,7 +102,11 @@ It transforms abstract RTL code into a **netlist** consisting of logic gates and
 The software tool that performs synthesis is called a **synthesizer**.  
 It takes RTL code as input and produces a gate-level netlist as output. The Yosys will be used for synthesyzing the given design.
 
-(image Haku)[https://image.com]
+
+<div align="center">
+  <img src="./Images/yosys.png" alt="yosys.png" width="600" />
+</div>
+
 
 ---
 
