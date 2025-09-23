@@ -183,7 +183,7 @@ $ read_verilog my_design.v
 $ hierarchy -top top_module_name
 $ synth -top top_module_name
 $ abc -liberty path/to/library.lib
-$ write_verilog my_design_netlist.v  # if the netlist looks complicated used -noattr flag to remove yosys internal attributes
+$ write_verilog -noattr my_design_netlist.v
 $ show
 $ exit       # to exit yosys.
 ```
@@ -228,7 +228,7 @@ $ exit       # to exit yosys.
 
 <div align="center">
   <img src="./Images/map_2.png" alt="cmap_2.png" width="600" />
-    <p><b>  Mapping the generic netlist with liberty supplied standard cells from Skywater130 pdk</b></p>
+    <p><b>Mapping the generic netlist to technology-specific standard cells using the SkyWater 130nm PDK liberty file</b></p>
 </div>
           
 
@@ -238,7 +238,7 @@ $ exit       # to exit yosys.
 
 <div align="center">
   <img src="./Images/netlist.png" alt="cnetlist.png" width="800" />
-  <p><b>Synthesised netlist being written in yosys</b></p>
+  <p><b>Synthesized netlist being written in yosys</b></p>
 </div>
             
 
@@ -258,4 +258,5 @@ $ exit       # to exit yosys.
   <img src="./Images/show.png" alt="show.png" width="800" />
   <p><b>Graphical View of the Synthesized Output</b></p>
 </div>
-           
+
+
