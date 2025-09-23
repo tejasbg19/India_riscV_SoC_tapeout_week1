@@ -1,4 +1,5 @@
 
+
 # Day-01: Introduction to RTL Design Simulation & Synthesis
 
 Simulation is the process of using software tools to mimic and verify the behavior of a digital circuit described in RTL (usually Verilog or VHDL), before hardware is built.
