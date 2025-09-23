@@ -123,7 +123,15 @@ For this workshop, the required `.lib` files can be obtained by cloning the repo
 $ git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop
 $ cd sky130RTLDesignAndSynthesisWorkshop
 ```
-![Cloned Folder Contents](https://iimages-will-be-here.com)
+<div align="center">
+  <img src="./Images/content_folder.png" alt="content_folder.png" width="600" />
+</div>
+
+
+<div align="center">
+  <img src="./Images/show_lib.png" alt="show_lib.png" width="600" />
+</div>
+
 
 As seen in the cloned directory:
 
