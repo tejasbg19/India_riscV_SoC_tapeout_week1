@@ -150,42 +150,42 @@ The user can either synthesize any of these example `.v` files or create their o
 
 ## Steps to Synthesize a Verilog File in Yosys
 
-The typical flow for synthesizing an RTL Verilog design using Yosys is as follows:
-
-1. **Read the standard cell library (.lib)**  
-   This allows Yosys to know the timing, area, and functionality of the available cells.  
-
-2. **Read the RTL Verilog design (.v)**  
-   Load the user's design into Yosys for synthesis.  
-
-3. **Set the top module**  
-   Specify which module is the top-level module for synthesis.  
-
-4. **Run synthesis**  
-   Use Yosys synthesis commands to map RTL to the technology library.
-
-5. **Technology Mapping**   
-   Maps the synthesized generic gates to given technology standard cells. 
-
-6. **Write the gate-level netlist**  
-   Export the synthesized design as a Verilog netlist or other formats (e.g., JSON, BLIF).  
-
-7. **Optionally view the design graphically**  
-   Yosys can generate a graphical representation of the netlist for verification.
+  The typical flow for synthesizing an RTL Verilog design using Yosys is as follows:
+  
+  1. **Read the standard cell library (.lib)**  
+     This allows Yosys to know the timing, area, and functionality of the available cells.  
+  
+  2. **Read the RTL Verilog design (.v)**  
+     Load the user's design into Yosys for synthesis.  
+  
+  3. **Set the top module**  
+     Specify which module is the top-level module for synthesis.  
+  
+  4. **Run synthesis**  
+     Use Yosys synthesis commands to map RTL to the technology library.
+  
+  5. **Technology Mapping**   
+     Maps the synthesized generic gates to given technology standard cells. 
+  
+  6. **Write the gate-level netlist**  
+     Export the synthesized design as a Verilog netlist or other formats (e.g., JSON, BLIF).  
+  
+  7. **Optionally view the design graphically**  
+     Yosys can generate a graphical representation of the netlist for verification.
 
 <!-- ---
 
 ## Bash Commands for Each Step  -->
 
 ```bash
-$ read_liberty -lib /path/to/sky130_fd_sc_hd__tt_025C_1v80.lib
-$ read_verilog my_design.v
+$ read_liberty -lib /path/to/sky130_fd_sc_hd__tt_025C_1v80.lib   
+$ read_verilog my_design.v                                  
 $ hierarchy -top top_module_name
 $ synth -top top_module_name
 $ abc -liberty path/to/library.lib
-$ write_verilog my_design_synth.v
+$ write_verilog my_design_netlist.v  # if the netlist looks complicated used -noattr flag to remove yosys internal attributes
 $ show
-
+```
 
 
 
