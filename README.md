@@ -24,3 +24,15 @@ This repository covers the basics of Verilog simulation using Icarus Verilog, an
 - Screenshots, waveforms, or results (if needed).  
 
 -->
+
+
+## Acknowledgments
+- RISC‑V Reference SoC Tapeout Program Organizers:
+    - VLSI System Design (VSD)
+    - Indian Institute of Technology Gandhinagar (IITGN)
+    - Semiconductor Laboratory (SCL)
+  <!--     - Synopsys Inc. -->
+
+
+## Contact Information
+- Tejas B G: [tejasbg13rvpu@gmail.com](mailto:tejasbg13rvpu@gmail.com)
