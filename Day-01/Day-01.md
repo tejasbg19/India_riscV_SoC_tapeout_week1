@@ -140,13 +140,47 @@ As seen in the cloned directory:
 
 
 <div align="center">
-  <img src="./Images/scopy.png" alt="cpy_lib.png" width="600" />
+  <img src="./Images/copy.png" alt="cpy_lib.png" width="600" />
 </div>
 
 
 
 The user can either synthesize any of these example `.v` files or create their own Verilog design. During synthesis, the absolute path of the Liberty file must be provided to Yosys to correctly map the RTL to technology-specific standard cells. Alternatively, the user can copy the `.lib` file into the directory containing their design files and pass it directly to Yosys for synthesis.
 
+
+## Steps to Synthesize a Verilog File in Yosys
+
+The typical flow for synthesizing an RTL Verilog design using Yosys is as follows:
+
+1. **Read the standard cell library (.lib)**  
+   This allows Yosys to know the timing, area, and functionality of the available cells.  
+
+2. **Read the RTL Verilog design (.v)**  
+   Load the user's design into Yosys for synthesis.  
+
+3. **Set the top module**  
+   Specify which module is the top-level module for synthesis.  
+
+4. **Run synthesis**  
+   Use Yosys synthesis commands to map RTL to the technology library.  
+
+5. **Write the gate-level netlist**  
+   Export the synthesized design as a Verilog netlist or other formats (e.g., JSON, BLIF).  
+
+6. **Optionally view the design graphically**  
+   Yosys can generate a graphical representation of the netlist for verification.
+
+<!-- ---
+
+## Bash Commands for Each Step  -->
+
+```bash
+$ read_liberty -lib /absolute/path/to/sky130_fd_sc_hd__tt_025C_1v80.lib
+$ read_verilog my_design.v
+$ hierarchy -top top_module_name
+$ synth -top top_module_name
+$ write_verilog my_design_synth.v
+$ show
 
 
 
