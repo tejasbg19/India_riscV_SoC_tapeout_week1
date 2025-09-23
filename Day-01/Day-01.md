@@ -26,33 +26,39 @@ The reader may create a personal directory, add their own Verilog modules and co
 
 
 ```bash
-$ mkdir My_Designs
-$ cd My_Designs
-$ gedit my_file.v my_tb.v 
+$ mkdir RTL_and_tb
+$ cd RTL_and_tb
+$ gedit adder.v adder_tb.v  
 ```
 
-Then the user can write and save their Verilog and testbench files. Alternatively, the user can copy/paste the codes available in the [Day1](./Day1) folder of this repository.
+
+Then the user can write and save their Verilog and testbench files. Alternatively, the user can copy/paste the codes available in the [Day-01](./Day-01/RTL_and_tb) folder of this repository.
 
 
 ## Default Compilation
 
 ```bash
-$ iverilog my_file.v my_tb.v
+$ iverilog adder.v adder_tb.v
 $ vvp a.out  # or ./a.out
 ```
 - This compiles the Verilog files and generates the default executable `a.out`.
 - Running `vvp a.out` or `./a.out` executes the simulation and typically creates a Value Change Dump (VCD) file (e.g., `dump.vcd`) if the testbench includes VCD dump commands.
 
+<div align="center">
+  <img src="./Images/copiled.png" alt="comiled" width="800" />
+</div>
+
+
 
 ## Compiling with a Custom Output Name
 
 ```bash
-$ iverilog -o my_custom_name my_file.v my_tb.v
-$ vvp my_custom_name
+$ iverilog -o adder adder.v adder_tb.v
+$ vvp adder
 ```
 
 - The `-o ` option lets the user to specify a custom name for the output simulation executable.
-- Run the executable as `vvp my_custom_name` to start simulation.
+- Run the executable as `vvp adder` to start simulation.
 
 
 # Viewing the Waveform with GTKWave
@@ -60,7 +66,7 @@ $ vvp my_custom_name
 If the simulation generates a `.vcd` file (waveform dump), the user can view it using GTKWave:
 
 ```bash
-$ gtkwave dump.vcd  # if custom name is given then use custom_name.vcd
+$ gtkwave Wave.vcd  # if custom name is given then use custom_name.vcd
 ```
 
 - This opens the GTKWave GUI, where the user can inspect signals, add variables to the waveform viewer, and debug their design interactively.
