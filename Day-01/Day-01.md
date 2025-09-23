@@ -86,6 +86,6 @@ $ gtkwave Wave.vcd  # if custom name is given then use custom_name.vcd
 </div>
 
 - A full Adder was implemented & simulated whose output can be verified in the thus generated `.vcd` file using `gtkwave`.
-- Full Adder truth Table 
+
 
 
