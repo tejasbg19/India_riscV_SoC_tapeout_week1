@@ -150,7 +150,7 @@ The user can either synthesize any of these example `.v` files or create their o
 
 ## Steps to Synthesize a Verilog File in Yosys
 
-  The typical flow for synthesizing an RTL Verilog design using Yosys is as follows:
+  The typical flow for synthesizing an RTL Verilog design after invoking Yosys is as follows:
   
   1. **Read the standard cell library (.lib)**  
      This allows Yosys to know the timing, area, and functionality of the available cells.  
