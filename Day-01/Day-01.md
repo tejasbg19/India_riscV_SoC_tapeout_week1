@@ -33,7 +33,9 @@ $ gedit adder.v adder_tb.v
 
 
 Then the user can write and save their Verilog and testbench files. Alternatively, the user can copy/paste the codes available in the [Day-01](./Day-01/RTL_and_tb) folder of this repository.
-
+<div align="center">
+  <img src="./Images/iverilog_invoke.png" alt="iverilog_invoke" width="800" />
+</div>
 
 ## Default Compilation
 
@@ -44,9 +46,7 @@ $ vvp a.out  # or ./a.out
 - This compiles the Verilog files and generates the default executable `a.out`.
 - Running `vvp a.out` or `./a.out` executes the simulation and typically creates a Value Change Dump (VCD) file (e.g., `dump.vcd`) if the testbench includes VCD dump commands.
 
-<div align="center">
-  <img src="./Images/copiled.png" alt="comiled" width="800" />
-</div>
+
 
 
 
@@ -59,7 +59,9 @@ $ vvp adder
 
 - The `-o ` option lets the user to specify a custom name for the output simulation executable.
 - Run the executable as `vvp adder` to start simulation.
-
+<div align="center">
+  <img src="./Images/copiled.png" alt="comiled" width="800" />
+</div>
 
 # Viewing the Waveform with GTKWave
 
