@@ -88,4 +88,37 @@ $ gtkwave Wave.vcd  # if custom name is given then use custom_name.vcd
 - A full Adder was implemented & simulated whose output can be verified in the thus generated `.vcd` file using `gtkwave`.
 
 
+---
+---
+
+# Synthesis
+
+Synthesis is the process of converting a high-level hardware description (written in RTL using Verilog or VHDL) into a gate-level representation that can be mapped onto real hardware such as ASICs or FPGAs.  
+It transforms abstract RTL code into a **netlist** consisting of logic gates and flip-flops based on a given standard cell library.
+
+
+## Synthesizer
+
+The software tool that performs synthesis is called a **synthesizer**.  
+It takes RTL code as input and produces a gate-level netlist as output. The Yosys will be used for synthesyzing the given design.
+
+(image Haku)[https://image.com]
+
+---
+
+# Synthesizing Using Yosys
+
+Yosys requires **standard cell libraries** in the form of `.lib` files to perform technology mapping during synthesis.  
+These libraries define the timing, area, and functionality of the cells that will be used in the synthesized netlist.
+
+For this workshop, the required `.lib` files can be obtained by cloning the repository provided by [Kunal Ghosh Sir](https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop), as shown below:
+
+```bash
+# Navigate to a preferred directory (e.g., Desktop)
+$ git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop
+$ cd sky130RTLDesignAndSynthesisWorkshop
+```
+
+
+
 
