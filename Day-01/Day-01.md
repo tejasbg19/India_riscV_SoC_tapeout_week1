@@ -162,12 +162,15 @@ The typical flow for synthesizing an RTL Verilog design using Yosys is as follow
    Specify which module is the top-level module for synthesis.  
 
 4. **Run synthesis**  
-   Use Yosys synthesis commands to map RTL to the technology library.  
+   Use Yosys synthesis commands to map RTL to the technology library.
 
-5. **Write the gate-level netlist**  
+5. **Technology Mapping**   
+   Maps the synthesized generic gates to given technology standard cells. 
+
+6. **Write the gate-level netlist**  
    Export the synthesized design as a Verilog netlist or other formats (e.g., JSON, BLIF).  
 
-6. **Optionally view the design graphically**  
+7. **Optionally view the design graphically**  
    Yosys can generate a graphical representation of the netlist for verification.
 
 <!-- ---
@@ -175,10 +178,11 @@ The typical flow for synthesizing an RTL Verilog design using Yosys is as follow
 ## Bash Commands for Each Step  -->
 
 ```bash
-$ read_liberty -lib /absolute/path/to/sky130_fd_sc_hd__tt_025C_1v80.lib
+$ read_liberty -lib /path/to/sky130_fd_sc_hd__tt_025C_1v80.lib
 $ read_verilog my_design.v
 $ hierarchy -top top_module_name
 $ synth -top top_module_name
+$ abc -liberty path/to/library.lib
 $ write_verilog my_design_synth.v
 $ show
 
