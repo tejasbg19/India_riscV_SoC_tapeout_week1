@@ -101,7 +101,7 @@ So this file describes:
 
 
 
-Users can use the `multiple_modules` Verilog file provided in `verilog_files` of the [Kunal Sir repo](<link-to-be-added>) or simply clone this repo and use the `two_adder.v` file found under the `Day-01/RTL_and_tb/` directory.
+Users can use the `multiple_modules` Verilog file provided in `verilog_files` of the [Kunal Sir repo](https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop) or simply clone this repo and use the `two_adder.v` file found under the `RTL_and_tb` directory.
 
 ---
 
@@ -110,8 +110,9 @@ Users can use the `multiple_modules` Verilog file provided in `verilog_files` of
 1. Read library file  
 2. Read all Verilog files  
 3. Synthesize design (set `-top` to the desired module)
-4. Write netlist
-5. Show schematic  
+4. Perform Technology mapping
+5. Write netlist
+6. Show schematic  
 
 ---
 
@@ -122,11 +123,20 @@ Users can use the `multiple_modules` Verilog file provided in `verilog_files` of
 | ![fa.v](images/fa_code.png) | ![two_adder.v](images/two_adder_code.png) | ![files](images/files.png) |
 
 **Step Outputs:**
+<div align="center">
+  <img src="./Images/1lib_file.png" alt="1lib_file.png" width="600" />
+  <p><b>sky130_fd_sc_hd__tt_025C_1v80.lib</b></p>
+</div>
 
-- ![read_lib](images/hier_read_lib.png)  
-- ![read_verilog](images/hier_read_verilog.png)  
-- ![synth_top](images/hier_synth.png)  
-- ![schematic](images/hier_show.png)  
+<div align="center">
+  <img src="./Images/1lib_file.png" alt="1lib_file.png" width="600" />
+  <p><b>sky130_fd_sc_hd__tt_025C_1v80.lib</b></p>
+</div>
+
+<div align="center">
+  <img src="./Images/1lib_file.png" alt="1lib_file.png" width="600" />
+  <p><b>sky130_fd_sc_hd__tt_025C_1v80.lib</b></p>
+</div>
 
 ---
 
@@ -134,10 +144,11 @@ Users can use the `multiple_modules` Verilog file provided in `verilog_files` of
 
 1. Read library file  
 2. Read all Verilog files  
-3. Synthesize design (set `-top` to the desired module with flattening enabled)
-4. Use flattening flag
-5. Write netlist
-6. Show schematic  
+3. Use flattening flag
+4. Synthesize design (set `-top` to the desired module with flattening enabled)
+5. Perform Technology mapping
+6. Write netlist
+7. Show schematic  
 
 ---
 
