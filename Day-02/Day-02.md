@@ -210,42 +210,21 @@ $ exit       # to exit yosys.
 
 <div align="center">
   <img src="./Images/17invoke_flatten.png" alt="17invoke_flatten.png" width="600" />
-  <p><b>Yosys Invodes, Library & Verilog files read and `flattened` command used </b></p>
+  <p><b>Yosys Invodes, Library & Verilog files read and flatten command used </b></p>
 </div>
 
 <br><br>
 
 <div align="center">
-  <img src="./Images/11cells_numb.png" alt="11cells_numb.png" width="600" />
-  <p><b>Total Number of Generic Logic Cells Used</b></p>
-</div>
-
-<br><br>
-
-<div align="center">
-  <img src="./Images/12Hirarchy.png" alt="12Hirarchy.png" width="600" />
-  <p><b>Hierarchy as infered by Yosys</b></p>
-</div>
-
-<br><br>
-
-<div align="center">
-  <img src="./Images/13Hiracrchy.png" alt="13Hiracrchy.png" width="600" />
+  <img src="./Images/18flattened_comps.png" alt="18flattened_comps.png" width="600" />
   <p><b>Technology mapped Cells</b></p>
 </div>
 
 <br><br>
 
 <div align="center">
-  <img src="./Images/14preserved.png" alt="14preserved.png" width="600" />
-  <p><b>Synthesized Netlist Retaining its Hierarchical Structure </b></p>
-</div>
-
-<br><br>
-
-<div align="center">
-  <img src="./Images/15show.png" alt="15show.png" width="600" />
-  <p><b>Graphical Representation of Synthesized Netlist</b></p>
+  <img src="./Images/19show_flatten.png" alt="19show_flatten.png" width="600" />
+  <p><b>Graphical Representation of Synthesized "flattened" Netlist</b></p>
 </div>
 
 ![Click here](./Images/two_bit_adder_flatten.png)
