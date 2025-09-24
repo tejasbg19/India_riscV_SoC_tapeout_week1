@@ -40,21 +40,9 @@ Standard cells come in **different drive strengths**.
   - Helps meet **timing requirements** when signals must travel faster.
 
 ### 🖼 Example: Different Drive Strengths of AND Gate
-<div align="left">
-  <img src="./Images/3and.png" alt="AND2_X1" width="400" />
-  <p><em>AND gate with smallest drive strength (X1)</em></p>
-</div>
-
-<div align="center">
-  <img src="./Images/4and.png" alt="AND2_X4" width="400" />
-  <p><em>AND gate with higher drive strength (X2)</em></p>
-</div>
-
-
-<div align="right">
-  <img src="./Images/5and.png" alt="AND2_X4" width="400" />
-  <p><em>AND gate with highest drive strength (X3)</em></p>
-</div>
+| AND gate with smallest drive strength (X1) | AND gate with higher drive strength (X2) | AND gate with highest drive strength (X3) |
+|--------------------------------------------|------------------------------------------|-------------------------------------------|
+| <img src="./Images/3and.png" alt="AND2_X1" width="500"/> | <img src="./Images/4and.png" alt="AND2_X2" width="500"/> | <img src="./Images/5and.png" alt="AND2_X3" width="500"/> |
 
 👉 The user can choose between smaller and larger cells during synthesis, depending on **timing, power, and area constraints**.
 
