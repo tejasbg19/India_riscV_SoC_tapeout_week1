@@ -222,8 +222,12 @@ $ exit       # to exit yosys.
 
 <br><br>
 
-[Flatten_netlist_hakku](./Images/two_bit_adder_flatten.com)
+<div align="center">
+  <img src="./Images/22.png" alt="22.png" width="600" />
+  <p><b>Flat Synthesized Netlist </b></p>
+</div>
 
+<br><br>
 
 <div align="center">
   <img src="./Images/19show_flatten.png" alt="19show_flatten.png" width="600" />
@@ -243,7 +247,7 @@ Yosys often maps synthesized logic to **NAND / NOR / INV primitives**, with a st
 
 | 2-Input NAND | 2-INPUT NOR | 
 |-----------------|------------------|
-| ![fa.v](./Ima) | ![two_adder.v](./Imagee.png) | 
+| ![fa.v](./Images/CMOS_NAND.png) | ![two_adder.v](./Images/CMOS_NOR_11zon.jpg) | 
 
 
 - ✅ **Speed & Area Efficiency** – NAND gates are generally faster and more area-efficient than equivalent NOR gates.  
