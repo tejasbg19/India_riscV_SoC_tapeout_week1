@@ -116,6 +116,17 @@ Users can use the `multiple_modules` Verilog file provided in `verilog_files` of
 
 ---
 
+```bash
+$ read_liberty -lib /path/to/sky130_fd_sc_hd__tt_025C_1v80.lib
+$ read_verilog main_module.v submodule.v
+$ synth -top top_module_name
+$ abc -liberty path/to/library.lib
+$ write_verilog -noattr my_design_netlist.v
+$ show top_module_name
+# to save the graphical schemtaic in png formate in the present working directory use $ show -format png -prefix./<name_u_want> top_module_name
+$ exit       # to exit yosys.   
+```
+
 ### Example: Hierarchical synthesis of a 2-bit Adder constructed by instantiating two full adders
 
 | Full Adder Code | 2-bit Adder Code | 
@@ -130,23 +141,28 @@ Users can use the `multiple_modules` Verilog file provided in `verilog_files` of
 
 <div align="center">
   <img src="./Images/11cells_numb.png" alt="11cells_numb.png" width="600" />
-  <p><b>Total Number of Logic Gates Used</b></p>
+  <p><b>Total Number of Generic Logic Cells Used</b></p>
 </div>
 
 
 <div align="center">
-  <img src="./Images/1lib_file.png" alt="1lib_file.png" width="600" />
-  <p><b>sky130_fd_sc_hd__tt_025C_1v80.lib</b></p>
+  <img src="./Images/12Hirarchy.png" alt="12Hirarchy.png" width="600" />
+  <p><b>Hierarchy as infered by Yosys</b></p>
 </div>
 
 <div align="center">
-  <img src="./Images/1lib_file.png" alt="1lib_file.png" width="600" />
-  <p><b>sky130_fd_sc_hd__tt_025C_1v80.lib</b></p>
+  <img src="./Images/13Hiracrchy.png" alt="13Hiracrchy.png" width="600" />
+  <p><b>Technology mapped Cells</b></p>
 </div>
 
 <div align="center">
-  <img src="./Images/1lib_file.png" alt="1lib_file.png" width="600" />
-  <p><b>sky130_fd_sc_hd__tt_025C_1v80.lib</b></p>
+  <img src="./Images/14preserved.png" alt="14preserved.png" width="600" />
+  <p><b>Synthesized Netlist Retaining its Hierarchical Structure </b></p>
+</div>
+
+<div align="center">
+  <img src="./Images/15show.png" alt="15show.png" width="600" />
+  <p><b>Graphical Representation of Synthesized Netlist</b></p>
 </div>
 
 ---
