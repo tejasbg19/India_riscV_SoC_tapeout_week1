@@ -139,26 +139,35 @@ $ exit       # to exit yosys.
   <p><b>Library file & both Verilog files read</b></p>
 </div>
 
+<br><br>
+
 <div align="center">
   <img src="./Images/11cells_numb.png" alt="11cells_numb.png" width="600" />
   <p><b>Total Number of Generic Logic Cells Used</b></p>
 </div>
 
+<br><br>
 
 <div align="center">
   <img src="./Images/12Hirarchy.png" alt="12Hirarchy.png" width="600" />
   <p><b>Hierarchy as infered by Yosys</b></p>
 </div>
 
+<br><br>
+
 <div align="center">
   <img src="./Images/13Hiracrchy.png" alt="13Hiracrchy.png" width="600" />
   <p><b>Technology mapped Cells</b></p>
 </div>
 
+<br><br>
+
 <div align="center">
   <img src="./Images/14preserved.png" alt="14preserved.png" width="600" />
   <p><b>Synthesized Netlist Retaining its Hierarchical Structure </b></p>
 </div>
+
+<br><br>
 
 <div align="center">
   <img src="./Images/15show.png" alt="15show.png" width="600" />
