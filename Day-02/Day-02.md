@@ -247,7 +247,7 @@ Yosys often maps synthesized logic to **NAND / NOR / INV primitives**, with a st
 
 | 2-Input NAND | 2-INPUT NOR | 
 |-----------------|------------------|
-| ![fa.v](./Images/CMOS_NAND.png) | ![two_adder.v](./Images/CMOS_NOR_11zon.jpg) | 
+| <img src="./Images/CMOS_NAND.png" alt="CMOS_NAND.png" width="500"/> | <img src="./Images/CMOS_NOR_11zon.jpg" alt="CMOS_NOR_11zon.jpg" width="500"/> |
 
 
 - ✅ **Speed & Area Efficiency** – NAND gates are generally faster and more area-efficient than equivalent NOR gates.  
