@@ -105,7 +105,7 @@ Users can use the `multiple_modules` Verilog file provided in `verilog_files` of
 
 ---
 
-## Steps involving Hierarchical Synthesis
+## Steps involving Hierarchical Synthesis After invoking Yosys
 
 1. Read library file  
 2. Read all Verilog files  
@@ -130,7 +130,7 @@ Users can use the `multiple_modules` Verilog file provided in `verilog_files` of
 
 ---
 
-## Steps involving Flat Synthesis
+## Steps involving Flat Synthesis After invoking Yosys
 
 1. Read library file  
 2. Read all Verilog files  
