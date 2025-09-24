@@ -118,14 +118,14 @@ Users can use the `multiple_modules` Verilog file provided in `verilog_files` of
 
 ### Example: Hierarchical synthesis of a 2-bit Adder constructed by instantiating two full adders
 
-| Full Adder Code | 2-bit Adder Code | File Organization |
-|-----------------|------------------|-------------------|
-| ![fa.v](images/fa_code.png) | ![two_adder.v](images/two_adder_code.png) | ![files](images/files.png) |
+| Full Adder Code | 2-bit Adder Code | 
+|-----------------|------------------|
+| ![fa.v](./Images/20fa-code.png) | ![two_adder.v](./Images/21two_code.png) | 
 
 **Step Outputs:**
 <div align="center">
   <img src="./Images/10files_read.png" alt="10files_read.pngg" width="600" />
-  <p><b>Library file & both Verilog files </b></p>
+  <p><b>Library file & both Verilog files read</b></p>
 </div>
 
 <div align="center">
