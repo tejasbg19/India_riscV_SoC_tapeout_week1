@@ -27,27 +27,33 @@ The user’s synthesis tool (like **Yosys**) refers to this file to understand h
   <p><b>Contents of the library file</b></p>
 </div>
 
-The user can find the `sky130_fd_sc_hd__tt_025C_1v80.lib` by [clicking here](../Day-01/RTL_and_tb/sky130_fd_sc_hd__tt_025C_1v80.lib). Here the file has been opened using gedit text editor. 
+The user can find the `sky130_fd_sc_hd__tt_025C_1v80.lib` by [clicking here](../Day-01/RTL_and_tb/sky130_fd_sc_hd__tt_025C_1v80.lib).
 
 ---
 
 ## 🔧 Drive Strengths and Cell Variants
 Standard cells come in **different drive strengths**.  
-- Example: `AND2_X1`, `AND2_X2`, `AND2_X4` → all are 2-input AND gates, but with increasing **drive capability**.  
+- Example: `and2_0`, `and2_1`, `and2_3` → all are 2-input AND gates, but with increasing **drive capability**.  
 - Higher drive strength means:
   - Can drive **larger loads** (more fanout or bigger capacitance).
   - Consumes more **power** and **area**.
   - Helps meet **timing requirements** when signals must travel faster.
 
 ### 🖼 Example: Different Drive Strengths of AND Gate
-<div align="center">
-  <img src="./Images/and_x1.png" alt="AND2_X1" width="400" />
-  <p><em>AND gate with small drive strength (X1)</em></p>
+<div align="left">
+  <img src="./Images/3and.png" alt="AND2_X1" width="400" />
+  <p><em>AND gate with smallest drive strength (X1)</em></p>
 </div>
 
 <div align="center">
-  <img src="./Images/and_x4.png" alt="AND2_X4" width="400" />
-  <p><em>AND gate with higher drive strength (X4)</em></p>
+  <img src="./Images/4and.png" alt="AND2_X4" width="400" />
+  <p><em>AND gate with higher drive strength (X2)</em></p>
+</div>
+
+
+<div align="right">
+  <img src="./Images/5and.png" alt="AND2_X4" width="400" />
+  <p><em>AND gate with highest drive strength (X3)</em></p>
 </div>
 
 👉 The user can choose between smaller and larger cells during synthesis, depending on **timing, power, and area constraints**.
