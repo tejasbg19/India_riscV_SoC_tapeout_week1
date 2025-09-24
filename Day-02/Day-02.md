@@ -71,6 +71,6 @@ Let’s break down the name step by step:
 - **1v80** → Nominal supply voltage of **1.80V**.  
 
 So this file describes:  
-👉 A **Sky130 process standard cell library**, high-density flavor, characterized at **typical process, 25°C, 1.80V**.
+👉 A **Sky130 process standard cell library**, high-density flavor, characterized at **typical process, 25°C, 1.80V**. To know more [click here](./pvt.md)
 
 ---
