@@ -107,11 +107,11 @@ Users can use the `multiple_modules` Verilog file provided in `verilog_files` of
 
 ## Steps involving Hierarchical Synthesis
 
-1. read library file  
-2. read all Verilog files  
-3. synthesize design (set `-top` to the desired module)
-4. write netlist
-5. show schematic  
+1. Read library file  
+2. Read all Verilog files  
+3. Synthesize design (set `-top` to the desired module)
+4. Write netlist
+5. Show schematic  
 
 ---
 
@@ -132,12 +132,12 @@ Users can use the `multiple_modules` Verilog file provided in `verilog_files` of
 
 ## Steps involving Flat Synthesis
 
-1. read library file  
-2. read all Verilog files  
-3. synthesize design (set `-top` to the desired module with flattening enabled)
-4. use flattening flag
-5. write netlist
-6. show schematic  
+1. Read library file  
+2. Read all Verilog files  
+3. Synthesize design (set `-top` to the desired module with flattening enabled)
+4. Use flattening flag
+5. Write netlist
+6. Show schematic  
 
 ---
 
