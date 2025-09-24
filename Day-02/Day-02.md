@@ -80,3 +80,83 @@ So this file describes:
 👉 A **Sky130 process standard cell library**, high-density flavor, characterized at **typical process, 25°C, 1.80V**. To know more [click here](./pvt.md)
 
 ---
+## 🔄 Flat vs Hierarchical Synthesis
+
+### Definition
+- **Flat Synthesis:** The tool flattens all RTL hierarchies into a single module and synthesizes everything together.  
+- **Hierarchical Synthesis:** Modules are synthesized separately; submodule instances can be reused without re-synthesis, Basically the hierarchy is preserved.
+
+### Yosys Support
+- Yosys supports both **flat** and **hierarchical synthesis**.  
+- The user can pass multiple Verilog files or even single file containing all submodules for hierarchical modules.  
+- Supports **submodule-level synthesis** (synthesizing a module once and reusing it multiple times).
+
+### Why Submodule Synthesis?
+1. **Resource Efficiency:** If a module is instantiated multiple times, synthesizing it once saves time and resources.  
+2. **Divide & Conquer:** Large designs can be broken into smaller modules for easier synthesis and debugging.
+
+### Fly Synthesis
+- Another term for **on-the-fly or incremental synthesis**.  
+- Only re-synthesizes modified modules instead of the full design.
+
+
+
+Users can use the `multiple_modules` Verilog file provided in `verilog_files` of the [Kunal Sir repo](<link-to-be-added>) or simply clone this repo and use the `two_adder.v` file found under the `Day-01/RTL_and_tb/` directory.
+
+---
+
+## Steps involving Hierarchical Synthesis
+
+1. read library file  
+2. read all Verilog files  
+3. synthesize design (set `-top` to the desired module)
+4. write netlist
+5. show schematic  
+
+---
+
+### Example: Hierarchical synthesis of a 2-bit Adder constructed by instantiating two full adders
+
+| Full Adder Code | 2-bit Adder Code | File Organization |
+|-----------------|------------------|-------------------|
+| ![fa.v](images/fa_code.png) | ![two_adder.v](images/two_adder_code.png) | ![files](images/files.png) |
+
+**Step Outputs:**
+
+- ![read_lib](images/hier_read_lib.png)  
+- ![read_verilog](images/hier_read_verilog.png)  
+- ![synth_top](images/hier_synth.png)  
+- ![schematic](images/hier_show.png)  
+
+---
+
+## Steps involving Flat Synthesis
+
+1. read library file  
+2. read all Verilog files  
+3. synthesize design (set `-top` to the desired module with flattening enabled)
+4. use flattening flag
+5. write netlist
+6. show schematic  
+
+---
+
+### Example: Flat synthesis of a 2-bit Adder constructed by instantiating two full adders
+
+**Step Outputs:**
+
+- ![read_lib](images/flat_read_lib.png)  
+- ![read_verilog](images/flat_read_verilog.png)  
+- ![synth_flat](images/flat_synth.png)  
+- ![schematic](images/flat_show.png)  
+
+
+---
+
+## ⚡ NAND-based Implementation
+- Yosys often maps logic to **NAND/NOR/INV primitives**, primarily **NAND**.  
+- Reason:  
+  - NAND gates are **fast, area-efficient, and easy to drive**.  
+  - Simplifies technology mapping and standard cell selection.  
+  - NOR could also be used, but NAND is generally preferred in CMOS logic.
+
