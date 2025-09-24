@@ -17,6 +17,18 @@ The user’s synthesis tool (like **Yosys**) refers to this file to understand h
 
 📌 In short: the `.lib` file tells the synthesis tool **which cells exist, how they behave, and their performance trade-offs**.
 
+<div align="center">
+  <img src="./Images/1lib_file.png" alt="1lib_file.png" width="600" />
+  <p><b>sky130_fd_sc_hd__tt_025C_1v80.lib</b></p>
+</div>
+
+<div align="center">
+  <img src="./Images/2gedit_find.png" alt="2gedit_find.png" width="600" />
+  <p><b>Contents of the library file</b></p>
+</div>
+
+The user can find the `sky130_fd_sc_hd__tt_025C_1v80.lib` by [clicking here](../Day-01/RTL_and_tb/sky130_fd_sc_hd__tt_025C_1v80.lib). Here the file has been opened using gedit text editor. 
+
 ---
 
 ## 🔧 Drive Strengths and Cell Variants
