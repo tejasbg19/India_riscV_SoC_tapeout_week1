@@ -171,7 +171,7 @@ $ exit       # to exit yosys.
 
 <div align="center">
   <img src="./Images/15show.png" alt="15show.png" width="600" />
-  <p><b>Graphical Representation of Synthesized Netlist</b></p>
+  <p><b>Graphical Representation of Synthesized Netlist > [Click here](./Images/two_bit_adder_hiearrachy.png)</b></p>
 </div>
 
 ---
