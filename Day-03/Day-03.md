@@ -75,14 +75,16 @@ Quine–McCluskey procedure → minimal sum of products.
 
 ---
 
-## 🔹Example of Combinational Logic Optimization done by Yosys
+## 🔹Example 1 of Combinational Logic Optimization done by Yosys
 
 <div align="center">
   <img src="./Images/1a_opt_check_cpde.png" alt="1a_opt_check_cpde.png" width="600" />
-  <p><b>Verilog Code</b></p>
+  <p><b>Verilog Code of module opt_check</b></p>
 </div>
 <br>
+
 On simple observation the above RTL code should have been translated to a `Mux` but when synthesized using Yosys with the `opt_clean -purge` command it translates to a simple and gate as shown below.
+
 
 <div align="center">
   <img src="./Images/1opt_check_invoke_synth.png" alt="1opt_check_invoke_synth.png" width="800" />
@@ -99,7 +101,32 @@ On simple observation the above RTL code should have been translated to a `Mux` 
   <p><b>Graphical View of Synthesized Netlist module opt_check</b></p>
 </div>
 <br>
+
+
 ---
+
+
+## 🔹Example 2 of Combinational Logic Optimization done by Yosys
+
+<div align="center">
+  <img src="./Images/4a_opt_check2_code.png" alt="4a_opt_check2_code.png" width="600" />
+  <p><b>Verilog Code of module opt_check2</b></p>
+</div>
+<br>
+Similarly just like example 1 due to propagation of constant 1, the `Mux` was optimized to a 2-input OR gate as show below.
+
+<br>
+<div align="center">
+  <img src="./Images/4opt_check2_show.png" alt="4opt_check2_show.png" width="1000" />
+  <p><b>Graphical View of Synthesized Netlist module opt_check2</b></p>
+</div>
+<br>
+
+
+---
+
+
+
 
 ## 🔹 Sequential Logic Optimization
 
