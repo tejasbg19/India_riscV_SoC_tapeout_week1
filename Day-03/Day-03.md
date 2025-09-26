@@ -75,7 +75,7 @@ Quine–McCluskey procedure → minimal sum of products.
 
 ---
 
-## 🔹Example 1 of Combinational Logic Optimization done by Yosys
+## 🔹Example 1 of Constant Propagation based Combinational Logic Optimization done by Yosys
 
 <div align="center">
   <img src="./Images/1a_opt_check_cpde.png" alt="1a_opt_check_cpde.png" width="600" />
@@ -106,7 +106,7 @@ On simple observation the above RTL code should have been translated to a `Mux` 
 ---
 
 
-## 🔹Example 2 of Combinational Logic Optimization done by Yosys
+## 🔹Example 2 of Constant Propagation based Combinational Logic Optimization done by Yosys
 
 <div align="center">
   <img src="./Images/4a_opt_check2_code.png" alt="4a_opt_check2_code.png" width="600" />
@@ -126,7 +126,7 @@ Similarly just like example 1 due to propagation of constant 1, the `Mux` was op
 ---
 
 
-## 🔹Example 3 of Combinational Logic Optimization done by Yosys
+## 🔹Example 3 of Constant Propagation based Combinational Logic Optimization done by Yosys
 
 <div align="center">
   <img src="./Images/5a_opt_check3_code.png" alt="5a_opt_check3_code.png" width="600" />
@@ -146,7 +146,7 @@ Similarly just like example 1 due to propagation of constant 1, the `Mux` was op
 
 ---
 
-## 🔹Example 4 of Combinational Logic Optimization done by Yosys
+## 🔹Example 4 of Constant Propagation based Combinational Logic Optimization done by Yosys
 
 <div align="center">
   <img src="./Images/6a_opt_check4_code.png" alt="6a_opt_check4_code.png" width="600" />
@@ -166,7 +166,7 @@ Similarly just like example 1 due to propagation of constant 1, the `Mux` was op
 
 ---
 
-## 🔹Example 5 of Combinational Logic Optimization done by Yosys
+## 🔹Example 5 of Constant Propagation based Combinational Logic Optimization done by Yosys
 
 <div align="center">
   <img src="./Images/7a_multimodule_opt_code.png" alt="7a_multimodule_opt_code.png" width="600" />
@@ -186,7 +186,7 @@ As this module contains many submodules, we must first use `flatten` command bef
 
 ---
 
-## 🔹Example 5 of Combinational Logic Optimization done by Yosys
+## 🔹Example 5 of Constant Propagation based Combinational Logic Optimization done by Yosys
 
 <div align="center">
   <img src="./Images/8a_multimodule_opt2_code.png" alt="8a_multimodule_opt2_code.png" width="600" />
