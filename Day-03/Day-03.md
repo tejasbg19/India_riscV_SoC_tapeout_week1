@@ -97,7 +97,7 @@ On simple observation the above RTL code should have been translated to a `Mux` 
 </div>
 <br>
 <div align="center">
-  <img src="./Images/3opt_check_show.png" alt="3opt_check_show.png" width="1000" />
+  <img src="./Images/3opt_check_show.png" alt="3opt_check_show.png" width="800" />
   <p><b>Graphical View of Synthesized Netlist module opt_check</b></p>
 </div>
 <br>
@@ -117,7 +117,7 @@ Similarly just like example 1 due to propagation of constant 1, the `Mux` was op
 
 <br>
 <div align="center">
-  <img src="./Images/4opt_check2_show.png" alt="4opt_check2_show.png" width="1000" />
+  <img src="./Images/4opt_check2_show.png" alt="4opt_check2_show.png" width="800" />
   <p><b>Graphical View of Synthesized Netlist module opt_check2</b></p>
 </div>
 <br>
@@ -125,6 +125,25 @@ Similarly just like example 1 due to propagation of constant 1, the `Mux` was op
 
 ---
 
+
+## 🔹Example 3 of Combinational Logic Optimization done by Yosys
+
+<div align="center">
+  <img src="./Images/5a_opt_check3_code.png" alt="5a_opt_check3_code.png" width="600" />
+  <p><b>Verilog Code of module opt_check3</b></p>
+</div>
+<br>
+Similarly just like example 1 due to propagation of constant 1, the `Mux` was optimized to a 2-input OR gate as show below.
+
+<br>
+<div align="center">
+  <img src="./Images/5_opt_check3_show.png" alt="5_opt_check3_show.png" width="800" />
+  <p><b>Graphical View of Synthesized Netlist module opt_check2</b></p>
+</div>
+<br>
+
+
+---
 
 
 
