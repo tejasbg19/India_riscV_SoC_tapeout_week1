@@ -40,6 +40,138 @@ Instead of implementing gates, synthesis tools will replace them with direct wir
 
 ---
 
+#### 🔹Example 1 of Combinational Logic Optimization done by Yosys
+
+<div align="center">
+  <img src="./Images/1a_opt_check_cpde.png" alt="1a_opt_check_cpde.png" width="600" />
+  <p><b>Verilog Code of module opt_check</b></p>
+</div>
+<br>
+
+On simple observation the above RTL code should have been translated to a `Mux` but when synthesized using Yosys with the `opt_clean -purge` command it translates to a simple and gate as shown below.
+
+
+<div align="center">
+  <img src="./Images/1opt_check_invoke_synth.png" alt="1opt_check_invoke_synth.png" width="800" />
+  <p><b>Yosys Invoked, liberty and verilog file passed</b></p>
+</div>
+<br>
+<div align="center">
+  <img src="./Images/2opt_check_numcells.png" alt="2opt_check_numcells.png" width="800" />
+  <p><b>Number of Cells used & Optimization command given</b></p>
+</div>
+<br>
+<div align="center">
+  <img src="./Images/3opt_check_show.png" alt="3opt_check_show.png" width="800" />
+  <p><b>Graphical View of Synthesized Netlist module opt_check</b></p>
+</div>
+<br>
+
+
+---
+
+
+#### 🔹Example 2 of Combinational Logic Optimization done by Yosys
+
+<div align="center">
+  <img src="./Images/4a_opt_check2_code.png" alt="4a_opt_check2_code.png" width="600" />
+  <p><b>Verilog Code of module opt_check2</b></p>
+</div>
+<br>
+Similarly just like example 1 due to propagation of constant 1, the `Mux` was optimized to a 2-input OR gate as show below.
+
+<br>
+<div align="center">
+  <img src="./Images/4opt_check2_show.png" alt="4opt_check2_show.png" width="800" />
+  <p><b>Graphical View of Synthesized Netlist module opt_check2</b></p>
+</div>
+<br>
+
+
+---
+
+
+#### 🔹Example 3 of Combinational Logic Optimization done by Yosys
+
+<div align="center">
+  <img src="./Images/5a_opt_check3_code.png" alt="5a_opt_check3_code.png" width="600" />
+  <p><b>Verilog Code of module opt_check3</b></p>
+</div>
+<br>
+
+Similarly just like example 1 due to propagation of constant 1, the `Mux` was optimized to a 3-input AND gate as show below.
+
+<br>
+<div align="center">
+  <img src="./Images/5_opt_check3_show.png" alt="5_opt_check3_show.png" width="800" />
+  <p><b>Graphical View of Synthesized Netlist module opt_check3</b></p>
+</div>
+<br>
+
+
+---
+
+#### 🔹Example 4 of Combinational Logic Optimization done by Yosys
+
+<div align="center">
+  <img src="./Images/6a_opt_check4_code.png" alt="6a_opt_check4_code.png" width="600" />
+  <p><b>Verilog Code of module opt_check4</b></p>
+</div>
+<br>
+
+Similarly just like example 1 due to propagation of constant 1, the `Mux` was optimized to a 2-input XNOR gate as show below.
+
+<br>
+<div align="center">
+  <img src="./Images/6opt_check4_show.png" alt="6opt_check4_show.png" width="800" />
+  <p><b>Graphical View of Synthesized Netlist module opt_check4</b></p>
+</div>
+<br>
+
+
+---
+
+#### 🔹Example 5 of Combinational Logic Optimization done by Yosys
+
+<div align="center">
+  <img src="./Images/7a_multimodule_opt_code.png" alt="7a_multimodule_opt_code.png" width="600" />
+  <p><b>Verilog Code of module multiple_module_opt</b></p>
+</div>
+<br>
+
+As this module contains many submodules, we must first use `flatten` command before applying the optimization code `opt_clean -purge`.
+
+<br>
+<div align="center">
+  <img src="./Images/7multimodule_opt_show.png" alt="7multimodule_opt_show.png" width="800" />
+  <p><b>Graphical View of Synthesized Netlist module multiple_module_opt</b></p>
+</div>
+<br>
+
+
+---
+
+#### 🔹Example 5 of Combinational Logic Optimization done by Yosys  
+
+<div align="center">
+  <img src="./Images/8a_multimodule_opt2_code.png" alt="8a_multimodule_opt2_code.png" width="600" />
+  <p><b>Verilog Code of module multiple_module_opt2</b></p>
+</div>
+<br>
+
+As this module contains many submodules, we must first use `flatten` command before applying the optimization code `opt_clean -purge`. despite And gates being instantiated multiple times d=through the submodules, Yosys optimized it in such a way that no logic cells were used in the final synthesized output as shown below.
+
+<br>
+<div align="center">
+  <img src="./Images/8multimodule_opt2_show.png" alt="8multimodule_opt2_show.png" width="800" />
+  <p><b>Graphical View of Synthesized Netlist module multiple_module_opt2</b></p>
+</div>
+<br>
+
+
+
+---
+
 ### 2. Boolean Logic Optimization
 **Definition:**  
 Using Boolean algebra to simplify expressions and reduce the number of gates.
@@ -75,138 +207,6 @@ Quine–McCluskey procedure → minimal sum of products.
 
 ---
 
-## 🔹Example 1 of Constant Propagation based Combinational Logic Optimization done by Yosys
-
-<div align="center">
-  <img src="./Images/1a_opt_check_cpde.png" alt="1a_opt_check_cpde.png" width="600" />
-  <p><b>Verilog Code of module opt_check</b></p>
-</div>
-<br>
-
-On simple observation the above RTL code should have been translated to a `Mux` but when synthesized using Yosys with the `opt_clean -purge` command it translates to a simple and gate as shown below.
-
-
-<div align="center">
-  <img src="./Images/1opt_check_invoke_synth.png" alt="1opt_check_invoke_synth.png" width="800" />
-  <p><b>Yosys Invoked, liberty and verilog file passed</b></p>
-</div>
-<br>
-<div align="center">
-  <img src="./Images/2opt_check_numcells.png" alt="2opt_check_numcells.png" width="800" />
-  <p><b>Number of Cells used & Optimization command given</b></p>
-</div>
-<br>
-<div align="center">
-  <img src="./Images/3opt_check_show.png" alt="3opt_check_show.png" width="800" />
-  <p><b>Graphical View of Synthesized Netlist module opt_check</b></p>
-</div>
-<br>
-
-
----
-
-
-## 🔹Example 2 of Constant Propagation based Combinational Logic Optimization done by Yosys
-
-<div align="center">
-  <img src="./Images/4a_opt_check2_code.png" alt="4a_opt_check2_code.png" width="600" />
-  <p><b>Verilog Code of module opt_check2</b></p>
-</div>
-<br>
-Similarly just like example 1 due to propagation of constant 1, the `Mux` was optimized to a 2-input OR gate as show below.
-
-<br>
-<div align="center">
-  <img src="./Images/4opt_check2_show.png" alt="4opt_check2_show.png" width="800" />
-  <p><b>Graphical View of Synthesized Netlist module opt_check2</b></p>
-</div>
-<br>
-
-
----
-
-
-## 🔹Example 3 of Constant Propagation based Combinational Logic Optimization done by Yosys
-
-<div align="center">
-  <img src="./Images/5a_opt_check3_code.png" alt="5a_opt_check3_code.png" width="600" />
-  <p><b>Verilog Code of module opt_check3</b></p>
-</div>
-<br>
-
-Similarly just like example 1 due to propagation of constant 1, the `Mux` was optimized to a 3-input AND gate as show below.
-
-<br>
-<div align="center">
-  <img src="./Images/5_opt_check3_show.png" alt="5_opt_check3_show.png" width="800" />
-  <p><b>Graphical View of Synthesized Netlist module opt_check3</b></p>
-</div>
-<br>
-
-
----
-
-## 🔹Example 4 of Constant Propagation based Combinational Logic Optimization done by Yosys
-
-<div align="center">
-  <img src="./Images/6a_opt_check4_code.png" alt="6a_opt_check4_code.png" width="600" />
-  <p><b>Verilog Code of module opt_check4</b></p>
-</div>
-<br>
-
-Similarly just like example 1 due to propagation of constant 1, the `Mux` was optimized to a 2-input XNOR gate as show below.
-
-<br>
-<div align="center">
-  <img src="./Images/6opt_check4_show.png" alt="6opt_check4_show.png" width="800" />
-  <p><b>Graphical View of Synthesized Netlist module opt_check4</b></p>
-</div>
-<br>
-
-
----
-
-## 🔹Example 5 of Constant Propagation based Combinational Logic Optimization done by Yosys
-
-<div align="center">
-  <img src="./Images/7a_multimodule_opt_code.png" alt="7a_multimodule_opt_code.png" width="600" />
-  <p><b>Verilog Code of module multiple_module_opt</b></p>
-</div>
-<br>
-
-As this module contains many submodules, we must first use `flatten` command before applying the optimization code `opt_clean -purge`.
-
-<br>
-<div align="center">
-  <img src="./Images/7multimodule_opt_show.png" alt="7multimodule_opt_show.png" width="800" />
-  <p><b>Graphical View of Synthesized Netlist module multiple_module_opt</b></p>
-</div>
-<br>
-
-
----
-
-## 🔹Example 5 of Constant Propagation based Combinational Logic Optimization done by Yosys  
-
-<div align="center">
-  <img src="./Images/8a_multimodule_opt2_code.png" alt="8a_multimodule_opt2_code.png" width="600" />
-  <p><b>Verilog Code of module multiple_module_opt2</b></p>
-</div>
-<br>
-
-As this module contains many submodules, we must first use `flatten` command before applying the optimization code `opt_clean -purge`. despite And gates being instantiated multiple times d=through the submodules, Yosys optimized it in such a way that no logic cells were used in the final synthesized output as shown below.
-
-<br>
-<div align="center">
-  <img src="./Images/8multimodule_opt2_show.png" alt="8multimodule_opt2_show.png" width="800" />
-  <p><b>Graphical View of Synthesized Netlist module multiple_module_opt2</b></p>
-</div>
-<br>
-
-
-
-
-
 ## 🔹 Sequential Logic Optimization
 
 ### 1. Sequential Constant Propagation
@@ -215,6 +215,8 @@ If a register always stores a constant (never changes during operation), the syn
 
 **Example:**  
 A flip-flop that always loads 0 on every clock can be removed and replaced by a constant 0.
+
+
 
 ---
 
