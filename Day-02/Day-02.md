@@ -458,7 +458,7 @@ $ exit       # to exit yosys.
 
 <div align="center">
   <img src="./Images/24_asy_rst_gtk.png" alt="24_asy_rst_gtk.png" width="1000" />
-  <p><b>Output being pulled to 0 the instant Rst becomes 1</b></p>
+  <p><b>Output being pulled to 0 the instant Reset becomes 1</b></p>
 </div>
 
 <br><br>
@@ -471,7 +471,7 @@ $ exit       # to exit yosys.
 <br><br>
 
 <div align="center">
-  <img src="./Images/26_asy_set_simu.png" alt="asyn_rst_yosys_synth.png" width="1000" />
+  <img src="./Images/32_asyn_rst_yosys_synth.pngg" alt="asyn_rst_yosys_synth.png" width="1000" />
   <p><b>Yosys performing synthesis</b></p>
 </div>
 
@@ -479,7 +479,7 @@ $ exit       # to exit yosys.
 
 
 <div align="center">
-  <img src="./Images/asyn_yosys_dffmap.png" alt="asyn_yosys_dffmap.png" width="1000" />
+  <img src="./Images/33_asyn_yosys_dffmap.png" alt="asyn_yosys_dffmap.png" width="1000" />
   <p><b>Yosys performing Flip flop technology mapping</b></p>
 </div>
 
