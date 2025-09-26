@@ -402,12 +402,12 @@ $ exit       # to exit yosys.
   <p><b>Graphical Representation of Synthesized DFF with Synchronous Reset</b></p>
 </div>
 
-
+<br><br>
 
 ---
 
-2. **DFF with Synchronous Set**  
-   - Similar to synchronous reset, but output is forced to `1` on reset condition.
+3. **DFF with Synchronous Set**  
+   - Similar to synchronous reset, but output is forced to `1` on set condition.
 
    ```verilog
     module dff_sync_set (input wire clk, input wire set, input wire d, output reg q);
@@ -423,11 +423,17 @@ $ exit       # to exit yosys.
    ```
 
 
-   ![DFF with synchronous set](image_syn_set.png)  
+<div align="center">
+  <img src="./Images/38_dff_syn_set.png" alt="38_dff_syn_set.png" width="1000" />
+  <p><b>Graphical Representation of Synthesized DFF with Synchronous Set</b></p>
+</div>
+
+<br><br>
+
 
 ---
 
-3. **DFF with Asynchronous Reset**  
+4. **DFF with Asynchronous Reset**  
    - Reset happens **immediately**, independent of clock.  
    - Useful when system-wide reset must be asserted instantly.  
 
@@ -443,11 +449,52 @@ $ exit       # to exit yosys.
     endmodule
    ```
 
-   ![DFF with asynchronous reset](image_asyn_rst.png)  
+  <div align="center">
+  <img src="./Images/23asy_rst_simu.png" alt="23asy_rst_simu.png" width="800" />
+  <p><b>Simulation of DFF with Asynchronous Reset</b></p>
+</div>
+
+<br><br>
+
+<div align="center">
+  <img src="./Images/24_asy_rst_gtk.png" alt="24_asy_rst_gtk.png" width="1000" />
+  <p><b>Output being pulled to 0 the instant Rst becomes 1</b></p>
+</div>
+
+<br><br>
+
+<div align="center">
+  <img src="./Images/25_asy_rst_gtk.png" alt="25_asy_rst_gtk.png" width="1000" />
+  <p><b>Even tough reset becomes 0 the output Q stays low until next the posedge of clk</b></p>
+</div>
+
+<br><br>
+
+<div align="center">
+  <img src="./Images/26_asy_set_simu.png" alt="asyn_rst_yosys_synth.png" width="1000" />
+  <p><b>Yosys performing synthesis</b></p>
+</div>
+
+<br><br>
+
+
+<div align="center">
+  <img src="./Images/asyn_yosys_dffmap.png" alt="asyn_yosys_dffmap.png" width="1000" />
+  <p><b>Yosys performing Flip flop technology mapping</b></p>
+</div>
+
+<br><br>
+
+<div align="center">
+  <img src="./Images/34_asyn_rst_show.png" alt="34_asyn_rst_show.png" width="1000" />
+  <p><b>Graphical Representation of Synthesized DFF with Asynchronous reset</b></p>
+</div>
+
+<br><br>
 
 ---
 
-4. **DFF with Asynchronous Set**  
+5. **DFF with Asynchronous Set**  
    - Forces output to `1` immediately, regardless of clock.
   ```verilog
     module dff_async_set (input wire clk, input wire set, input wire d, output reg q);
@@ -483,7 +530,7 @@ $ exit       # to exit yosys.
 
 ---
 
-5. **DFF with Both Async Reset & Sync Reset**  
+6. **DFF with Both Async Reset & Sync Reset**  
    - Asynchronous reset initializes the design instantly.  
    - Synchronous reset is checked at clock edge.  
    - Priority is always:  
