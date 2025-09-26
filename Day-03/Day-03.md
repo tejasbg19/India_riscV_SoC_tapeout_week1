@@ -247,7 +247,7 @@ A flip-flop that always loads 0 on every clock can be removed and replaced by a 
 </div>
 <br>
 <div align="center">
-  <img src="./Images/14_dff_const1_show.png" alt="14_dff_const1_show.png" width="800" />
+  <img src="./Images/14_dff_const1_show.png" alt="14_dff_const1_show.png" width="1000" />
   <p><b>Graphical View of Synthesized Netlist module dff_const1</b></p>
 </div>
 <br>
@@ -281,7 +281,7 @@ A flip-flop that always loads 0 on every clock can be removed and replaced by a 
 </div>
 <br>
 <div align="center">
-  <img src="./Images/16_dff_const2_show.png" alt="16_dff_const2_show.png" width="800" />
+  <img src="./Images/16_dff_const2_show.png" alt="16_dff_const2_show.png" width="1000" />
   <p><b>Graphical View of Synthesized Netlist module dff_const2</b></p>
 </div>
 <br>
@@ -289,6 +289,107 @@ A flip-flop that always loads 0 on every clock can be removed and replaced by a 
 
 ---
 
+#### 🔹Example 3 of Sequential Logic Optimization done by Yosys
+
+<div align="center">
+  <img src="./Images/17a_dff_const3_code.png" alt="17a_dff_const3_code.png" width="600" />
+  <p><b>Verilog Code of module dff_const3</b></p>
+</div>
+<br>
+
+<div align="center">
+  <img src="./Images/17_dff_const3_simu.png" alt="17_dff_const3_simu.png" width="600" />
+  <p><b>Simulation of module dff_const3 using iverilog</b></p>
+</div>
+<br>
+
+<div align="center">
+  <img src="./Images/18_dff_const3_gtk.png" alt="18_dff_const3_gtk.png" width="1000" />
+  <p><b>Simulated waveforms of module dff_const3 in GTKwave</b></p>
+</div>
+
+<br>
+<div align="center">
+  <img src="./Images/19_dff_const3_cells.png" alt="19_dff_const3_cells.png" width="800" />
+  <p><b>Number of Cells used </b></p>
+</div>
+<br>
+<div align="center">
+  <img src="./Images/20_dff_const3_show.png" alt="20_dff_const3_show.png" width="1000" />
+  <p><b>Graphical View of Synthesized Netlist module dff_const3</b></p>
+</div>
+<br>
+
+
+---
+
+#### 🔹Example 4 of Sequential Logic Optimization done by Yosys
+
+<div align="center">
+  <img src="./Images/21a_dff_const4_code.png" alt="21a_dff_const4_code.png" width="600" />
+  <p><b>Verilog Code of module dff_const4</b></p>
+</div>
+<br>
+
+<div align="center">
+  <img src="./Images/21_dff_const4_simu.png" alt="21_dff_const4_simu.png" width="600" />
+  <p><b>Simulation of module dff_const4 using iverilog</b></p>
+</div>
+<br>
+
+<div align="center">
+  <img src="./Images/22_dff_const4_gtk.png" alt="22_dff_const4_gtk.png" width="1000" />
+  <p><b>Simulated waveforms of module dff_const4 in GTKwave</b></p>
+</div>
+
+<br>
+<div align="center">
+  <img src="./Images/23_dff_const4_cells.png" alt="23_dff_const4_cells.png" width="800" />
+  <p><b>Number of Cells used </b></p>
+</div>
+<br>
+<div align="center">
+  <img src="./Images/24_dff_const4_show.png" alt="24_dff_const4_show.png" width="1000" />
+  <p><b>Graphical View of Synthesized Netlist module dff_const4</b></p>
+</div>
+<br>
+
+
+---
+
+#### 🔹Example 5 of Sequential Logic Optimization done by Yosys
+
+<div align="center">
+  <img src="./Images/25a_dff_const5_code.png" alt="25a_dff_const5_code.png" width="600" />
+  <p><b>Verilog Code of module dff_const5</b></p>
+</div>
+<br>
+
+<div align="center">
+  <img src="./Images/25_dff_const5_simu.png" alt="25_dff_const5_simu.png" width="600" />
+  <p><b>Simulation of module dff_const5 using iverilog</b></p>
+</div>
+<br>
+
+<div align="center">
+  <img src="./Images/26_dff_const5_gtk.png" alt="26_dff_const5_gtk.png" width="1000" />
+  <p><b>Simulated waveforms of module dff_const5 in GTKwave</b></p>
+</div>
+
+<br>
+<div align="center">
+  <img src="./Images/27_dff_const5_cells.png" alt="27_dff_const5_cells.png" width="800" />
+  <p><b>Number of Cells used </b></p>
+</div>
+<br>
+<div align="center">
+  <img src="./Images/28_dff_const5_show.png" alt="28_dff_const5_show.png" width="1000" />
+  <p><b>Graphical View of Synthesized Netlist module dff_const5</b></p>
+</div>
+<br>
+
+
+---
 
 ### 2. State Optimization
 **Definition:**  
