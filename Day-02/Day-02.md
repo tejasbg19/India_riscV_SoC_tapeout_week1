@@ -276,6 +276,15 @@ Hence, **reset (or set) signals are essential** for reliable initialization.
 
 ---
 
+### ⚠️ Glitches & Propagation Delays  
+- In pure combinational logic, signals may glitch due to **unequal path delays**.  
+- Flip-flops act as **sampling points** that capture only the final stable value on the clock edge, avoiding intermediate glitches.  
+- Reset/Set ensures **deterministic startup values**, preventing unpredictable behavior at power-up.
+
+![image](image)
+
+---
+
 ### 📌 Why Mostly D Flip-Flops (DFFs)?  
 - Simpler design: only **one input (D)** apart from clock/reset, which directly represents the value to be stored.  
 - Easy to infer from RTL and widely supported by synthesis tools.  
@@ -326,12 +335,7 @@ Hence, **reset (or set) signals are essential** for reliable initialization.
 
    ![DFF with both async and sync reset](image_asyn_syn_rst.png)  
 
----
 
-### ⚠️ Glitches & Propagation Delays  
-- In pure combinational logic, signals may glitch due to **unequal path delays**.  
-- Flip-flops act as **sampling points** that capture only the final stable value on the clock edge, avoiding intermediate glitches.  
-- Reset/Set ensures **deterministic startup values**, preventing unpredictable behavior at power-up.  
 
 ---
 
