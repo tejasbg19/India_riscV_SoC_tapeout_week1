@@ -471,7 +471,7 @@ $ exit       # to exit yosys.
 <br><br>
 
 <div align="center">
-  <img src="./Images/32_asyn_rst_yosys_synth.pngg" alt="asyn_rst_yosys_synth.png" width="1000" />
+  <img src="./Images/32_asyn_rst_yosys_synth.png" alt="asyn_rst_yosys_synth.png" width="1000" />
   <p><b>Yosys performing synthesis</b></p>
 </div>
 
@@ -508,25 +508,34 @@ $ exit       # to exit yosys.
     endmodule
    ```
 
-    <div align="center">
-  <img src="./Images/13Hiracrchy.png" alt="13Hiracrchy.png" width="600" />
-  <p><b>Technology mapped Cells</b></p>
+   <div align="center">
+  <img src="./Images/26_asy_set_simu.png" alt="26_asy_set_simu.png" width="800" />
+  <p><b>Simulation of DFF with Asynchronous Set</b></p>
 </div>
 
 <br><br>
 
 <div align="center">
-  <img src="./Images/14preserved.png" alt="14preserved.png" width="600" />
-  <p><b>Synthesized Netlist Retaining its Hierarchical Structure </b></p>
+  <img src="./Images/27_asy_set_gtk.png" alt="27_asy_set_gtk.png" width="1000" />
+  <p><b>Output being pulled to 1 the instant Set becomes 1</b></p>
 </div>
 
 <br><br>
 
 <div align="center">
-  <img src="./Images/15show.png" alt="15show.png" width="600" />
-  <p><b>Graphical Representation of Synthesized Netlist</b></p>
+  <img src="./Images/28_asy_gtk.png" alt="28_asy_gtk.png" width="1000" />
+  <p><b>Even tough Set becomes 0 the output Q stays High until next the posedge of clk</b></p>
 </div>
 
+<br><br>
+
+
+<div align="center">
+  <img src="./Images/35_asyn_set_show.png" alt="35_asyn_set_show.png" width="1000" />
+  <p><b>Graphical Representation of Synthesized DFF with Asynchronous Set</b></p>
+</div>
+
+<br><br>
 
 ---
 
