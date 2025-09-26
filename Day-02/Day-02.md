@@ -327,7 +327,7 @@ The process of synthesizing **flip-flops** in Yosys is similar to combinational 
 $ read_liberty -lib /path/to/sky130_fd_sc_hd__tt_025C_1v80.lib
 $ read_verilog main_module.v submodule.v
 $ synth -top top_module_name
-$ dffmap ------------
+$ dfflibmap -liberty path/to/library.lib
 $ abc -liberty path/to/library.lib
 $ write_verilog -noattr my_design_netlist.v
 $ show top_module_name
@@ -351,8 +351,15 @@ $ exit       # to exit yosys.
       end
       endmodule
     ```
-   
+ 
+  <div align="center">
+  <img src="./Images/37_simple_dff.png" alt="37_simple_dff.png" width="600" />
+  <p><b>Graphical Representation of Synthesized Simple DFF</b></p>
+</div>
 
+<br><br>
+
+---
 2. **DFF with Synchronous Reset**  
    - Reset happens **only at the clock edge**.  
    - Common in FPGA designs where asynchronous signals are discouraged.
@@ -369,7 +376,31 @@ $ exit       # to exit yosys.
      endmodule
    ```
 
-   ![DFF with synchronous reset](image_syn_rst.png)  
+  <div align="center">
+  <img src="./Images/29_syn_res_simu.png" alt="29_syn_res_simu.png" width="400" />
+  <p><b>Simulation of DFF with Synchronous Reset</b></p>
+</div>
+
+<br><br>
+
+<div align="center">
+  <img src="./Images/30_syn_res_gtk_x.png" alt="30_syn_res_gtk_x.png" width="600" />
+  <p><b>Output being undeterministic as the FF was not initialized in the begining</b></p>
+</div>
+
+<br><br>
+
+<div align="center">
+  <img src="./Images/31_syn_res_gtk.png" alt="31_syn_res_gtk.png" width="600" />
+  <p><b>Even tough reset = 1 the output Q becomes 1 only at the posedge of clk</b></p>
+</div>
+
+<div align="center">
+  <img src="./Images/36_syn_res.png" alt="36_syn_res.png" width="800" />
+  <p><b>Graphical Representation of Synthesized DFF with Synchronous Reset</b></p>
+</div>
+
+
 
 ---
 
@@ -428,7 +459,25 @@ $ exit       # to exit yosys.
     endmodule
    ```
 
-   ![DFF with asynchronous set](image_asyn_set.png)  
+    <div align="center">
+  <img src="./Images/13Hiracrchy.png" alt="13Hiracrchy.png" width="600" />
+  <p><b>Technology mapped Cells</b></p>
+</div>
+
+<br><br>
+
+<div align="center">
+  <img src="./Images/14preserved.png" alt="14preserved.png" width="600" />
+  <p><b>Synthesized Netlist Retaining its Hierarchical Structure </b></p>
+</div>
+
+<br><br>
+
+<div align="center">
+  <img src="./Images/15show.png" alt="15show.png" width="600" />
+  <p><b>Graphical Representation of Synthesized Netlist</b></p>
+</div>
+
 
 ---
 
