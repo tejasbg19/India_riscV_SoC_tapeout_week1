@@ -186,7 +186,7 @@ As this module contains many submodules, we must first use `flatten` command bef
 
 ---
 
-## 🔹Example 5 of Constant Propagation based Combinational Logic Optimization done by Yosys
+## 🔹Example 5 of Constant Propagation based Combinational Logic Optimization done by Yosys  
 
 <div align="center">
   <img src="./Images/8a_multimodule_opt2_code.png" alt="8a_multimodule_opt2_code.png" width="600" />
