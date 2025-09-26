@@ -347,7 +347,7 @@ $ exit       # to exit yosys.
       module dff_simple (input  wire clk, input  wire d, output reg  q);
       always @(posedge clk)
       begin
-        q <= d;   // just sample input on rising clock
+        q <= d;   
       end
       endmodule
     ```
@@ -355,14 +355,40 @@ $ exit       # to exit yosys.
 
 2. **DFF with Synchronous Reset**  
    - Reset happens **only at the clock edge**.  
-   - Common in FPGA designs where asynchronous signals are discouraged.  
+   - Common in FPGA designs where asynchronous signals are discouraged.
+
+   ```verilog
+     module dff_sync_reset (input wire clk, input wire rst, input wire d, output reg q);
+     always @(posedge clk)
+       begin
+        if (rst)
+          q <= 1'b0;
+        else
+          q <= d;
+        end
+     endmodule
+   ```
 
    ![DFF with synchronous reset](image_syn_rst.png)  
 
 ---
 
 2. **DFF with Synchronous Set**  
-   - Similar to synchronous reset, but output is forced to `1` on reset condition.  
+   - Similar to synchronous reset, but output is forced to `1` on reset condition.
+
+   ```verilog
+    module dff_sync_set (input wire clk, input wire set, input wire d, output reg q);
+    always @(posedge clk)
+       begin
+        if (set)
+          q <= 1'b1;
+        else
+          q <= d;
+       end
+    endmodule
+
+   ```
+
 
    ![DFF with synchronous set](image_syn_set.png)  
 
@@ -372,12 +398,35 @@ $ exit       # to exit yosys.
    - Reset happens **immediately**, independent of clock.  
    - Useful when system-wide reset must be asserted instantly.  
 
+   ```verilog
+    module dff_async_reset (input wire clk, input wire rst, input wire d, output reg q);
+    always @(posedge clk or posedge rst)
+     begin
+        if (rst)
+          q <= 1'b0;
+        else
+          q <= d;
+     end
+    endmodule
+   ```
+
    ![DFF with asynchronous reset](image_asyn_rst.png)  
 
 ---
 
 4. **DFF with Asynchronous Set**  
-   - Forces output to `1` immediately, regardless of clock.  
+   - Forces output to `1` immediately, regardless of clock.
+  ```verilog
+    module dff_async_set (input wire clk, input wire set, input wire d, output reg q);
+      always @(posedge clk or posedge set)
+        begin
+          if (set)
+            q <= 1'b1;
+          else
+            q <= d;
+        end
+    endmodule
+   ```
 
    ![DFF with asynchronous set](image_asyn_set.png)  
 
@@ -387,7 +436,21 @@ $ exit       # to exit yosys.
    - Asynchronous reset initializes the design instantly.  
    - Synchronous reset is checked at clock edge.  
    - Priority is always:  
-     **Asynchronous Reset / Set > Synchronous Reset / Set > D Input**.  
+     **Asynchronous Reset / Set > Synchronous Reset / Set > D Input**.
+
+    ```verilog
+    module dff_async_reset_sync_reset (input wire clk, input wire arst, input wire srst, input wire d, output reg q);
+      always @(posedge clk or posedge arst)
+        begin
+          if (arst)
+            q <= 1'b0;
+          else if (srst)
+            q <= 1'b0;
+          else
+            q <= d;
+        end
+    endmodule
+   ```
 
    ![DFF with both async and sync reset](image_asyn_syn_rst.png)  
 
