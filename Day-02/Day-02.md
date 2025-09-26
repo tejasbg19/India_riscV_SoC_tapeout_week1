@@ -295,9 +295,65 @@ Hence, **reset (or set) signals are essential** for reliable initialization.
 
 ---
 
+### ⚙️ Steps Involved in Synthesizing Flip-Flops in Yosys
+
+The process of synthesizing **flip-flops** in Yosys is similar to combinational circuits, but with special attention to **sequential elements** like clock, reset, and set pins.
+
+1. **Read the Technology Library**  
+   Load the appropriate `.lib` file (e.g., `sky130_fd_sc_hd__tt_025C_1v80.lib`).
+
+2. **Read the Verilog RTL Code**  
+   Provide the RTL file(s) containing the flip-flop descriptions (DFF, sync/asyn reset/set, etc.).
+
+3. **Set the Top Module**  
+   Define which module to treat as the top-level (e.g., `dff`, `dff_async_reset`, etc.).
+
+4. **Synthesize the Design**  
+   Run the `synth` command to perform RTL-to-gate-level conversion.
+
+5. **Technology Mapping**  
+   Use `dfflibmap` to map generic flip-flops to the corresponding standard cell DFFs in the technology library.
+
+6. **Optimize with ABC**  
+   Invoke `abc` for logic optimization and technology mapping.
+
+7. **Write Out Netlist**  
+   Export the final gate-level netlist using `write_verilog`.
+
+8. **Visualize if Needed**  
+   Use `show` to generate a schematic of the synthesized design.
+
+```bash
+$ read_liberty -lib /path/to/sky130_fd_sc_hd__tt_025C_1v80.lib
+$ read_verilog main_module.v submodule.v
+$ synth -top top_module_name
+$ dffmap ------------
+$ abc -liberty path/to/library.lib
+$ write_verilog -noattr my_design_netlist.v
+$ show top_module_name
+# to save the graphical schemtaic in png formate in the present working directory use $ show -format png -prefix./<name_u_want> top_module_name
+$ exit       # to exit yosys.   
+```
+
+---
+
 ### 📘 Types of Flip-Flop Implementations  
 
-1. **DFF with Synchronous Reset**  
+1. **Simple DFF** 
+   - There is no reset or set pins.
+   - The output Q = D at posedge of Clock
+   - This type of code is coded as below
+    ```verilog
+      module dff_simple (input  wire clk, input  wire d, output reg  q);
+      always @(posedge clk)
+      begin
+        q <= d;   // just sample input on rising clock
+      end
+      endmodule
+    ```
+   
+
+2. **DFF with Synchronous Reset**  
    - Reset happens **only at the clock edge**.  
    - Common in FPGA designs where asynchronous signals are discouraged.  
 
