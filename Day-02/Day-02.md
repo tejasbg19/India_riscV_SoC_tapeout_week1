@@ -297,7 +297,7 @@ Hence, **reset (or set) signals are essential** for reliable initialization.
 
 ### ⚙️ Steps Involved in Synthesizing Flip-Flops in Yosys
 
-The process of synthesizing **flip-flops** in Yosys is similar to combinational circuits, but with special attention to **sequential elements** like clock, reset, and set pins.
+The process of synthesizing **flip-flops** in Yosys is similar to combinational circuits, but with special attention to **sequential elements** like clock, reset, and set pins. Users can use the various types of Flop files provided in `verilog_files` of the [Kunal Sir repo](https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop) to simulate & synthesize flops.
 
 1. **Read the Technology Library**  
    Load the appropriate `.lib` file (e.g., `sky130_fd_sc_hd__tt_025C_1v80.lib`).
