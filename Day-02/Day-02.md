@@ -353,7 +353,7 @@ $ exit       # to exit yosys.
     ```
  
   <div align="center">
-  <img src="./Images/37_simple_dff.png" alt="37_simple_dff.png" width="600" />
+  <img src="./Images/37_simple_dff.png" alt="37_simple_dff.png" width="1000" />
   <p><b>Graphical Representation of Synthesized Simple DFF</b></p>
 </div>
 
@@ -384,19 +384,21 @@ $ exit       # to exit yosys.
 <br><br>
 
 <div align="center">
-  <img src="./Images/30_syn_res_gtk_x.png" alt="30_syn_res_gtk_x.png" width="600" />
+  <img src="./Images/30_syn_res_gtk_x.png" alt="30_syn_res_gtk_x.png" width="1000" />
   <p><b>Output being undeterministic as the FF was not initialized in the begining</b></p>
 </div>
 
 <br><br>
 
 <div align="center">
-  <img src="./Images/31_syn_res_gtk.png" alt="31_syn_res_gtk.png" width="600" />
+  <img src="./Images/31_syn_res_gtk.png" alt="31_syn_res_gtk.png" width="1000" />
   <p><b>Even tough reset = 1 the output Q becomes 1 only at the posedge of clk</b></p>
 </div>
 
+<br><br>
+
 <div align="center">
-  <img src="./Images/36_syn_res.png" alt="36_syn_res.png" width="800" />
+  <img src="./Images/36_syn_res.png" alt="36_syn_res.png" width="1000" />
   <p><b>Graphical Representation of Synthesized DFF with Synchronous Reset</b></p>
 </div>
 
