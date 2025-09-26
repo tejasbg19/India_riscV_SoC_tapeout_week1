@@ -260,5 +260,83 @@ Yosys often maps synthesized logic to **NAND / NOR / INV primitives**, with a st
 
 👉 Hence, NAND becomes the **go-to primitive** for efficient digital logic implementation in synthesis flows.  
 
+---
+
+## 🌀 Flip-Flop Coding & Optimization  
+
+Flip-flops are the fundamental **sequential elements** in digital design. Unlike combinational logic, which reacts instantly to input changes, flip-flops **store state information** and update their outputs based on a clock edge.  
+
+### 🔧 Why Do We Need Flip-Flops?  
+- ✅ To **avoid glitches** caused by propagation delays in combinational paths.  
+- ✅ To **synchronize signals** with the clock and ensure predictable timing.  
+- ✅ To **break long combinational paths** and improve timing closure in synthesis.  
+
+Without proper initialization, flip-flops may power up in an **unknown state**, driving garbage into the combinational logic → producing garbage outputs.  
+Hence, **reset (or set) signals are essential** for reliable initialization.  
+
+---
+
+### 📌 Why Mostly D Flip-Flops (DFFs)?  
+- Simpler design: only **one input (D)** apart from clock/reset, which directly represents the value to be stored.  
+- Easy to infer from RTL and widely supported by synthesis tools.  
+- Other flip-flops (JK, T, SR) can be implemented using DFFs with additional combinational logic.  
+- Industry-standard cell libraries primarily provide **DFF variants** (with/without reset/set).  
+
+👉 That’s why when we say "flip-flops" in RTL coding, we usually mean **DFFs**.  
+
+---
+
+### 📘 Types of Flip-Flop Implementations  
+
+1. **DFF with Synchronous Reset**  
+   - Reset happens **only at the clock edge**.  
+   - Common in FPGA designs where asynchronous signals are discouraged.  
+
+   ![DFF with synchronous reset](image_syn_rst.png)  
+
+---
+
+2. **DFF with Synchronous Set**  
+   - Similar to synchronous reset, but output is forced to `1` on reset condition.  
+
+   ![DFF with synchronous set](image_syn_set.png)  
+
+---
+
+3. **DFF with Asynchronous Reset**  
+   - Reset happens **immediately**, independent of clock.  
+   - Useful when system-wide reset must be asserted instantly.  
+
+   ![DFF with asynchronous reset](image_asyn_rst.png)  
+
+---
+
+4. **DFF with Asynchronous Set**  
+   - Forces output to `1` immediately, regardless of clock.  
+
+   ![DFF with asynchronous set](image_asyn_set.png)  
+
+---
+
+5. **DFF with Both Async Reset & Sync Reset**  
+   - Asynchronous reset initializes the design instantly.  
+   - Synchronous reset is checked at clock edge.  
+   - Priority is always:  
+     **Asynchronous Reset / Set > Synchronous Reset / Set > D Input**.  
+
+   ![DFF with both async and sync reset](image_asyn_syn_rst.png)  
+
+---
+
+### ⚠️ Glitches & Propagation Delays  
+- In pure combinational logic, signals may glitch due to **unequal path delays**.  
+- Flip-flops act as **sampling points** that capture only the final stable value on the clock edge, avoiding intermediate glitches.  
+- Reset/Set ensures **deterministic startup values**, preventing unpredictable behavior at power-up.  
+
+---
+
+👉 By carefully coding different types of DFFs and using resets/sets appropriately, designers ensure **robust and glitch-free sequential logic** in their RTL.  
+
+
 
 
