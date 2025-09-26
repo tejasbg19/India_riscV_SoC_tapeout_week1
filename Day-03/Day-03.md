@@ -33,9 +33,9 @@ Instead of implementing gates, synthesis tools will replace them with direct wir
 Using Boolean algebra to simplify expressions and reduce the number of gates.
 
 **Examples:**  
-- Idempotent Law: a + a = a  
-- Absorption Law: a + (a·b) = a  
-- Consensus Theorem: a·b + a'·c + b·c = a·b + a'·c  
+- Idempotent Law: `a + a = a`  
+- Absorption Law: `a + (a·b) = a`, `a' + a.b = a + b` 
+- Consensus Theorem: `a·b + a'·c + b·c = a·b + a'·c`
 
 This helps eliminate redundant terms and gates.
 
