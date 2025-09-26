@@ -216,9 +216,79 @@ If a register always stores a constant (never changes during operation), the syn
 **Example:**  
 A flip-flop that always loads 0 on every clock can be removed and replaced by a constant 0.
 
+#### 🔹Example 1 of Sequential Logic Optimization done by Yosys
+
+<div align="center">
+  <img src="./Images/9a_dff_const1_code.png" alt="9a_dff_const1_code.png" width="600" />
+  <p><b>Verilog Code of module dff_const1</b></p>
+</div>
+<br>
+
+<div align="center">
+  <img src="./Images/9_dff_const1_simu.png" alt="9_dff_const1_simu.png" width="600" />
+  <p><b>Simulation of module dff_const1 using iverilog</b></p>
+</div>
+<br>
+
+<div align="center">
+  <img src="./Images/10_dff_const1_gtk.png" alt="10_dff_const1_gtk.png" width="1000" />
+  <p><b>Simulated waveforms of module dff_const1 in GTKwave</b></p>
+</div>
+<br>
+
+<div align="center">
+  <img src="./Images/13_dff_const1_yosys_invoke.png" alt="13_dff_const1_yosys_invoke.png" width="800" />
+  <p><b>Yosys Invoked, liberty and verilog file passed</b></p>
+</div>
+<br>
+<div align="center">
+  <img src="./Images/14a_dff_const1_cells.png" alt="14a_dff_const1_cells.png" width="800" />
+  <p><b>Number of Cells used </b></p>
+</div>
+<br>
+<div align="center">
+  <img src="./Images/14_dff_const1_show.png" alt="14_dff_const1_show.png" width="800" />
+  <p><b>Graphical View of Synthesized Netlist module dff_const1</b></p>
+</div>
+<br>
 
 
 ---
+
+#### 🔹Example 2 of Sequential Logic Optimization done by Yosys
+
+<div align="center">
+  <img src="./Images/11a_dff_const2_code.png" alt="11a_dff_const2_code.png" width="600" />
+  <p><b>Verilog Code of module dff_const2</b></p>
+</div>
+<br>
+
+<div align="center">
+  <img src="./Images/11_dff_const2_simu.png" alt="11_dff_const2_simu.png" width="600" />
+  <p><b>Simulation of module dff_const2 using iverilog</b></p>
+</div>
+<br>
+
+<div align="center">
+  <img src="./Images/12_dff_const2_gtk.png" alt="12_dff_const2_gtk.png" width="1000" />
+  <p><b>Simulated waveforms of module dff_const2 in GTKwave</b></p>
+</div>
+
+<br>
+<div align="center">
+  <img src="./Images/15_dff_const2_cells.png" alt="15_dff_const2_cells.png" width="800" />
+  <p><b>Number of Cells used </b></p>
+</div>
+<br>
+<div align="center">
+  <img src="./Images/16_dff_const2_show.png" alt="16_dff_const2_show.png" width="800" />
+  <p><b>Graphical View of Synthesized Netlist module dff_const2</b></p>
+</div>
+<br>
+
+
+---
+
 
 ### 2. State Optimization
 **Definition:**  
