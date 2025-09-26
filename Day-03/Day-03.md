@@ -416,3 +416,61 @@ This reduces routing delay and improves timing closure in large designs.
 - Combinational optimization focuses on simplification of Boolean logic (propagation, minimization).  
 - Sequential optimization deals with flip-flops and state elements (constant propagation, state reduction, retiming, cloning).  
 - Both are critical for reducing area, power, and delay in modern digital circuits. -->
+
+### 5. Removal of Unused Logic
+**Definition:**  
+Any intermediate logic or registers that do not contribute to the final output are considered unused and are removed by the synthesis tool.  
+
+**Example: 1**  
+
+<div align="center">
+  <img src="./Images/29a_counter_opt_code.png" alt="29a_counter_opt_code.png" width="600" />
+  <p><b>Verilog Code of module counter_opt</b></p>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="./Images/29_counter_opt_cells.png" alt="29_counter_opt_cells.png" width="800" />
+  <p><b>Number of Cells used </b></p>
+</div>
+<br>
+<div align="center">
+  <img src="./Images/30_counter_opt_counter_show.png" alt="30_counter_opt_counter_show.png" width="1000" />
+  <p><b>Graphical View of Synthesized Netlist module counter_opt</b></p>
+</div>
+<br>
+
+In the above 3-bit counter, only the least significant bit `count(0)` is assigned to the final output `q`, the logic for `count(1)` and `count(2)` is unused.  
+During synthesis, these unused flip-flops and related combinational logic were pruned, reducing area and power without affecting the functionality of the design. 
+
+
+---
+
+**Example: 2**  
+
+<div align="center">
+  <img src="./Images/31a_counter_opt2_code.png" alt="31a_counter_opt2_code.png" width="600" />
+  <p><b>Verilog Code of module counter_opt2</b></p>
+</div>
+
+<br>
+
+The above verilog module is the modified version of example 1, here the all the bits of counter are used to determine the output of the module, hence there is no unused intermediate logic, hence all 3 flops will be synthesized.
+
+
+<div align="center">
+  <img src="./Images/31_counter_opt2_cells.png" alt="31_counter_opt2_cells.png" width="800" />
+  <p><b>Number of Cells used </b></p>
+</div>
+<br>
+<div align="center">
+  <img src="./Images/32_counter_opt2_show.png" alt="32_counter_opt2_show.png" width="1000" />
+  <p><b>Graphical View of Synthesized Netlist module counter_opt2</b></p>
+</div>
+<br>
+
+
+
+
+
