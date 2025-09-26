@@ -8,7 +8,19 @@ The goals of optimization include:
 - Reducing delay (faster circuits, higher performance).
 - Improving reliability (simpler designs, easier verification).
 
-Optimization is a crucial step in digital VLSI design because even small improvements in area and power can have a huge impact in large-scale integrated circuits.
+Optimization is a crucial step in digital VLSI design because even small improvements in area and power can have a huge impact in large-scale integrated circuits. The genral steps invilved in optimizing a design in yosys is given below :
+```bash
+$ read_liberty -lib /path/to/sky130_fd_sc_hd__tt_025C_1v80.lib
+$ read_verilog main_module.v submodule.v
+$ synth -top top_module_name
+$ opt_clean -purge  # to optimize and remove unused nets and cells. If multiple instantion sof submodules exist before this step use flatten command
+$ abc -liberty path/to/library.lib
+$ write_verilog -noattr my_design_netlist.v
+$ show top_module_name
+# to save the graphical schemtaic in png formate in the present working directory use $ show -format png -prefix./<name_u_want> top_module_name
+$ exit       # to exit yosys.   
+```
+
 
 ---
 
@@ -61,6 +73,32 @@ It systematically finds prime implicants and reduces expressions.
 Function: F(A,B,C,D) = Σ(0,1,2,5,6,7,8,9,10,14)  
 Quine–McCluskey procedure → minimal sum of products.
 
+---
+
+## 🔹Example of Combinational Logic Optimization done by Yosys
+
+<div align="center">
+  <img src="./Images/1a_opt_check_cpde.png" alt="1a_opt_check_cpde.png" width="600" />
+  <p><b>Verilog Code</b></p>
+</div>
+<br>
+On simple observation the above RTL code should have been translated to a `Mux` but when synthesized using Yosys with the `opt_clean -purge` command it translates to a simple and gate as shown below.
+
+<div align="center">
+  <img src="./Images/1opt_check_invoke_synth.png" alt="1opt_check_invoke_synth.png" width="800" />
+  <p><b>Yosys Invoked, liberty and verilog file passed</b></p>
+</div>
+<br>
+<div align="center">
+  <img src="./Images/2opt_check_numcells.png" alt="2opt_check_numcells.png" width="800" />
+  <p><b>Number of Cells used & Optimization command given</b></p>
+</div>
+<br>
+<div align="center">
+  <img src="./Images/3opt_check_show.png" alt="3opt_check_show.png" width="1000" />
+  <p><b>Graphical View of Synthesized Netlist module opt_check</b></p>
+</div>
+<br>
 ---
 
 ## 🔹 Sequential Logic Optimization
