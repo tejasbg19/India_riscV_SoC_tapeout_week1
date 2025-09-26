@@ -471,7 +471,7 @@ $ exit       # to exit yosys.
 <br><br>
 
 <div align="center">
-  <img src="./Images/32_asyn_rst_yosys_synth.png" alt="asyn_rst_yosys_synth.png" width="1000" />
+  <img src="./Images/32_asyn_rst_yosys_synth.png" alt="asyn_rst_yosys_synth.png" width="600" />
   <p><b>Yosys performing synthesis</b></p>
 </div>
 
@@ -479,7 +479,7 @@ $ exit       # to exit yosys.
 
 
 <div align="center">
-  <img src="./Images/33_asyn_yosys_dffmap.png" alt="asyn_yosys_dffmap.png" width="1000" />
+  <img src="./Images/33_asyn_yosys_dffmap.png" alt="asyn_yosys_dffmap.png" width="600" />
   <p><b>Yosys performing Flip flop technology mapping</b></p>
 </div>
 
@@ -559,7 +559,13 @@ $ exit       # to exit yosys.
     endmodule
    ```
 
-   ![DFF with both async and sync reset](image_asyn_syn_rst.png)  
+  
+<div align="center">
+  <img src="./Images/39_dff_both.png" alt="39_dff_both.png" width="1000" />
+  <p><b>Graphical Representation of Synthesized DFF with Asynchronous Reset and Synchronous Reset</b></p>
+</div>
+
+<br><br>
 
 
 
