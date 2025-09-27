@@ -147,6 +147,56 @@ endcase
 1. **Incomplete Case:**  
    - If all possible conditions are not covered (and no `default` is present), it infers a **latch**.  
    - Example: I have simulation and synthesis images for this (will attach).  
+   - **Example :**  
+
+| RTL Code of module incomp_case |  Test Bench of module incomp_case |
+|--------------------------------------------|------------------------------------------|
+| <img src="./Images/8a_incomp_case_code.png" alt="8a_incomp_case_code.png" width="500"/> | <img src="./Images/8b_incomp_case_tb.png" alt="8b_incomp_case_tb.png" width="500"/> | 
+<br>
+
+<div align="center">
+  <img src="./Images/9a_incomp_case_gtk1_10.png" alt="9a_incomp_case_gtk1_10.png" width="1000" />
+  <p><b>RTL Simulation Output</b></p>
+</div>
+<br>
+
+As output is not defined for condiition when `2'b10` , the output latches itself to previous value of `Y` which was `0`.
+
+<br>
+
+<div align="center">
+  <img src="./Images/9b_incomp_case_gtk2_11.png" alt="9b_incomp_case_gtk2_11.png" width="1000" />
+  <p><b>RTL Simulation Output</b></p>
+</div>
+<br>
+
+As output is not defined for condiition when `2'b11` , the output latches itself to previous value of `Y` which was `0`.
+
+<div align="center">
+  <img src="./Images/10_incomp_case_cells.png" alt="10_incomp_case_cells.png" width="800" />
+  <p><b>As Expected only 1 Dlatch is Infered by Yosys</b></p>
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="./Images/11_incomp_case_show.png" alt="11_incomp_case_show.png" width="1000" />
+  <p><b>Graphical Representation of Synthesized Netlist of module incomp_case</b></p>
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="./Images/11a_incomp_case_netlist.png" alt="11a_incomp_case_netlist.png" width="800" />
+  <p><b>Synthesized Netlist of module incomp_case</b></p>
+</div>
+
+<br>
+
+---
+
 
 2. **Partial Assignment in Case:**  
    - If in one case branch not all variables are assigned, then the unassigned variable holds its previous value → latch inferred.  
