@@ -135,6 +135,27 @@ case (expression)
  default : statementN;  
 endcase
 ```
+**Example of Complete & Good Case:**  
+
+| RTL Code of module comp_case |  Test Bench of module comp_case |
+|--------------------------------------------|------------------------------------------|
+| <img src="./Images/12a_comp_mux_code.png" alt="12a_comp_mux_code.png" width="500"/> | <img src="./Images/12b_comp_case_tb.png" alt="12b_comp_case_tb.png" width="500"/> | 
+<br>
+
+<div align="center">
+  <img src="./Images/13_comp_case_gtk_simu.png" alt="13_comp_case_gtk_simu.png" width="1000" />
+  <p><b>RTL Simulation Output of module comp_case</b></p>
+</div>
+<br>
+
+As we can Infer by the above output waveform, there is no latch inferred in the above module. As there is a default statment to cover all inputs and all the outputs are defined.
+
+---
+
+
+
+
+
 
 **Important:**  
 - Case must also be written inside an always block.  
