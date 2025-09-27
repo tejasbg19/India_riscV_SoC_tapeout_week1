@@ -22,10 +22,12 @@ else
 - Latches are dangerous in synchronous designs because they cause timing and metastability issues.  
 
 **Example (incomplete if causing latch):**  
+```verilg
 always @(a or b)  
  if (a)  
   y = b;  
-// missing else → latch inferred for y  
+// missing else → latch inferred for y
+```  
 
 **Note:**  
 - `if` statements and `case` statements are written **inside an always block**.  
@@ -43,11 +45,13 @@ always @(a or b)
   - `casez` → treats `z` as don’t-care (but not `x`).  
 
 **Generic Syntax:**  
+```verilog
 case (expression)  
  value1 : statement1;  
  value2 : statement2;  
  default : statementN;  
-endcase  
+endcase
+```
 
 **Important:**  
 - Case must also be written inside an always block.  
