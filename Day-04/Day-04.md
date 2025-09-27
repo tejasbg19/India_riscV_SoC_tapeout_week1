@@ -76,6 +76,8 @@ $ gtkwave name_of_file.vcd
 </div>
 
 
+The RTL simulation waveform & Synthesized Netlist simulaed wavefrom match ! Hence we can conclude that the logic functionality is retained.
+
 ---
 
 
@@ -129,6 +131,7 @@ As we can see even though the RTL coding style seems to be that of a `2:1 Mux`, 
   <p><b>Gate Level Simulation of the Synthesized Netlist of module bad_mux</b></p>
 </div>
 
+Whereas, the Synthesized Netlist output waveform is that of a normal non-latched `2:1 Mux`, which is entierly different from the RTL simulated waveform --> Simulation & Synthesis Mismatch has occured !!! 
 
 
 ---
@@ -137,7 +140,65 @@ As we can see even though the RTL coding style seems to be that of a `2:1 Mux`, 
 
 **Blocking (`=`):**  
 - Executes sequentially, just like a C program.  
-- Commonly used for **combinational logic**.  
+- Commonly used for **combinational logic**.
+- **Example :**
+
+| RTL Code of module blocking_caveat |  Test Bench of module blocking_caveat |
+|--------------------------------------------|------------------------------------------|
+| <img src="./Images/11a_blocking_caveat_code.png" alt="11a_blocking_caveat_code.png" width="500"/> | <img src="./Images/11b_blocking_caveat_tb.png" alt="11b_blocking_caveat_tb.png" width="500"/> | 
+<br>
+
+<div align="center">
+  <img src="./Images/12_blocking_caveat_simu_gtk1.png" alt="12_blocking_caveat_simu_gtk1.png" width="1000" />
+  <p><b>RTL Simulation Output</b></p>
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="./Images/13_blocking_caveat_simu_gtk2.png" alt="13_blocking_caveat_simu_gtk2.png" width="1000" />
+  <p><b>RTL Simulation Output</b></p>
+</div>
+
+<br>
+
+
+
+<div align="center">
+  <img src="./Images/14_blocking_caveat_cells.png" alt="14_blocking_caveat_cells.png" width="800" />
+  <p><b>Number & Type of Cells as Infered by Yosys</b></p>
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="./Images/15_blocking_caveat_show.png" alt="15_blocking_caveat_show.png" width="1000" />
+  <p><b>Graphical Representation of Synthesized Netlist of module blocking_caveat</b></p>
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="./Images/9_bad_mux_netlist .png" alt="9_bad_mux_netlist.png" width="600" />
+  <p><b>Synthesized Netlist of module blocking_caveat</b></p>
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="./Images/16_blocking_caveat_GLS_gtk1.png" alt="16_blocking_caveat_GLS_gtk1.png" width="1000" />
+  <p><b>Gate Level Simulation of the Synthesized Netlist of module blocking_caveat</b></p>
+</div>
+
+<div align="center">
+  <img src="./Images/17_blocking_caveat_GLS_gtk2.png" alt="17_blocking_caveat_GLS_gtk2.png" width="1000" />
+  <p><b>Gate Level Simulation of the Synthesized Netlist of module blocking_caveat</b></p>
+</div>
+
 
 **Non-Blocking (`<=`):**  
 - RHS values are evaluated first, then all assignments update in parallel.  
