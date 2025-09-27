@@ -21,7 +21,7 @@ else
 - If you forget to specify all branches, the synthesizer will infer a **latch**.  
 - Latches are dangerous in synchronous designs because they cause timing and metastability issues.  
 
-**Example (incomplete if causing latch):**  
+**Example 1 (incomplete if causing latch):**  
 
 | RTL Code of module incomp_if |  Test Bench of module incomp_if |
 |--------------------------------------------|------------------------------------------|
@@ -32,8 +32,9 @@ else
   <img src="./Images/1_incomp_if_gtk_simu.png" alt="1_incomp_if_gtk_simu.png" width="1000" />
   <p><b>RTL Simulation Output</b></p>
 </div>
-
 <br>
+
+As output is not defined for condiition when `i0 = 0` , the output latches itself to previous value of `Y` which was `1` when `i0` becomes `0`
 
 <div align="center">
   <img src="./Images/2_incomp_if_cell.png" alt="2_incomp_if_cell.png" width="600" />
@@ -57,6 +58,58 @@ else
 </div>
 
 <br>
+
+---
+
+**Example 2 (incomplete if causing latch):**  
+
+| RTL Code of module incomp_if2 |  Test Bench of module incomp_if2 |
+|--------------------------------------------|------------------------------------------|
+| <img src="./Images/4a_incomp_if2_code.png" alt="4b_incomp_if2_.png" width="500"/> | <img src="./Images/4b_incomp_if2_tb.png" alt="4b_incomp_if2_tb.png" width="500"/> | 
+<br>
+
+<div align="center">
+  <img src="./Images/5a_incomp_if2_gtk1_latch1.png" alt="5a_incomp_if2_gtk1_latch1.png" width="1000" />
+  <p><b>RTL Simulation Output</b></p>
+</div>
+<br>
+
+As output is not defined for condiition when `i0 = 0` & `i2 = 0` , the output latches itself to previous value of `Y` which was `1`.
+
+<br>
+
+<div align="center">
+  <img src="./Images/5b_incomp_if2_gtk2_latch0.png" alt="5b_incomp_if2_gtk2_latch0.png" width="1000" />
+  <p><b>RTL Simulation Output</b></p>
+</div>
+<br>
+
+As output is not defined for condiition when `i0 = 0` & `i2 = 0` , the output latches itself to previous value of `Y` which was `0`.
+
+<div align="center">
+  <img src="./Images/6_incmp_if2_cells.png" alt="6_incmp_if2_cells.png" width="800" />
+  <p><b>As Expected only 1 Dlatch is Infered by Yosys</b></p>
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="./Images/7_incomp_if2_show.png" alt="7_incomp_if2_show.png" width="1000" />
+  <p><b>Graphical Representation of Synthesized Netlist of module incomp_if2</b></p>
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="./Images/7a_incomp_if2_netlist.png" alt="7a_incomp_if2_netlist.png" width="800" />
+  <p><b>Synthesized Netlist of module incomp_if2</b></p>
+</div>
+
+<br>
+
+---
 
 
 **Note:**  
