@@ -182,7 +182,7 @@ Whereas, the Synthesized Netlist output waveform is that of a normal non-latched
 
 
 <div align="center">
-  <img src="./Images/9_bad_mux_netlist .png" alt="9_bad_mux_netlist.png" width="600" />
+  <img src="./Images/18_blocking_caveat_netlist.png" alt="18_blocking_caveat_netlist.png" width="600" />
   <p><b>Synthesized Netlist of module blocking_caveat</b></p>
 </div>
 
