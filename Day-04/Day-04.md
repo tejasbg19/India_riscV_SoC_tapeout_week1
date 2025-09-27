@@ -153,10 +153,11 @@ Whereas, the Synthesized Netlist output waveform is that of a normal non-latched
   <p><b>Intented Logic</b></p>
 </div>
 
+<br>
 
 <div align="center">
   <img src="./Images/12_blocking_caveat_simu_gtk1.png" alt="12_blocking_caveat_simu_gtk1.png" width="1000" />
-  <p><b>RTL Simulation Output</b></p>
+  <p><b>RTL Simulation Output: Waveform 1</b></p>
 </div>
 
 <br>
@@ -164,12 +165,12 @@ Whereas, the Synthesized Netlist output waveform is that of a normal non-latched
 
 <div align="center">
   <img src="./Images/13_blocking_caveat_simu_gtk2.png" alt="13_blocking_caveat_simu_gtk2.png" width="1000" />
-  <p><b>RTL Simulation Output</b></p>
+  <p><b>RTL Simulation Output: Waveform 2</b></p>
 </div>
 
 <br>
 
-
+As we can observe from Waveform 1 & 2, even though the intended logic was a simple combinational logic with an `AND` & `OR` gate, we observe the output is changing with respect to previous values of inputs `a`, `b`, `c`. Hence the simulation infers a latch in the design. 
 
 <div align="center">
   <img src="./Images/14_blocking_caveat_cells.png" alt="14_blocking_caveat_cells.png" width="800" />
@@ -197,13 +198,15 @@ Whereas, the Synthesized Netlist output waveform is that of a normal non-latched
 
 <div align="center">
   <img src="./Images/16_blocking_caveat_GLS_gtk1.png" alt="16_blocking_caveat_GLS_gtk1.png" width="1000" />
-  <p><b>Gate Level Simulation of the Synthesized Netlist of module blocking_caveat</b></p>
+  <p><b>Gate Level Simulation of the Synthesized Netlist of module blocking_caveat, Waveform: 3</b></p>
 </div>
 
 <div align="center">
   <img src="./Images/17_blocking_caveat_GLS_gtk2.png" alt="17_blocking_caveat_GLS_gtk2.png" width="1000" />
-  <p><b>Gate Level Simulation of the Synthesized Netlist of module blocking_caveat</b></p>
+  <p><b>Gate Level Simulation of the Synthesized Netlist of module blocking_caveat, Waveform: 4</b></p>
 </div>
+
+As we can observe from Waveform 3 & 4, the output is responding to the current values of inputs `a`, `b`, `c`. Hence the synthesis the infered the same logic we had intended.
 
 
 **Non-Blocking (`<=`):**  
@@ -224,6 +227,5 @@ Examples (in plain text):
 - Infinite loops without proper sensitivity list.  
 - Incomplete if/else → unintended latches.  
 
-📷 *[Insert images here: code, testbench, RTL vs netlist simulation outputs]*  
 
 ---
