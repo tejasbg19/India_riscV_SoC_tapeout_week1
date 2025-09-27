@@ -303,6 +303,6 @@ The output for input `11` depends on the simulator & even synthesizer as this co
   <p><b>Gate Level Simulation output of the Synthesized Netlist</b></p>
 </div>
 
-The output for input `11` follows `i3` in the synthesized netlist simulation where as it latched to previous value of output in RTL simulation.
+The output for input `11` follows `i3` in the synthesized netlist simulation where as it latched to previous value of output in RTL simulation. Even tough there were no inferred latched, the overlapping cases `2'b1?` caused a Synthesis–Simulation Mismatch.
 
 ---
