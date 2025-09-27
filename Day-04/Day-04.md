@@ -149,6 +149,12 @@ Whereas, the Synthesized Netlist output waveform is that of a normal non-latched
 <br>
 
 <div align="center">
+  <img src="./Images/Gemini_Generated_Image_nkbvmnkbvmnkbvmn.png" alt="Gemini_Generated_Image_nkbvmnkbvmnkbvmn.png" width="600" />
+  <p><b>Intented Logic</b></p>
+</div>
+
+
+<div align="center">
   <img src="./Images/12_blocking_caveat_simu_gtk1.png" alt="12_blocking_caveat_simu_gtk1.png" width="1000" />
   <p><b>RTL Simulation Output</b></p>
 </div>
