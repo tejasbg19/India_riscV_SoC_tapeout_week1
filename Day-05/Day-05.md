@@ -471,6 +471,66 @@ Example:
 As We can observe both RTL simulated outputs & Synthesized netlist of `demux_case` & `demux_generate` the same.
 
 ---
+- **Example Ripple Carry Adder using Full Adders**
+  
+<div align="center">
+<img src="./Images/26a_demux_code.png" alt="26a_demux_code.png" width="500"/> 
+  <p><b>RTL Code of module demux_case</b></p>
+</div>
 
+<br>
+
+<div align="center">
+  <img src="./Images/26_demux_gtk_sim.png" alt="26_demux_gtk_sim.png" width="1000" />
+  <p><b>RTL Simulation Output </b></p>
+</div>
+<br>
+
+
+<div align="center">
+  <img src="./Images/29demux_case_cells.png" alt="29demux_case_cells.png" width="800" />
+  <p><b>Cells as Infered by Yosys</b></p>
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="./Images/28_demux_case_show.png" alt="28_demux_case_show.png" width="1000" />
+  <p><b>Graphical Representation of Synthesized Netlist of module demux_generate</b></p>
+</div>
+
+<br>
+
+<div align="center">
+<img src="./Images/27a_demux_generate_code.png" alt="27a_demux_generate_code.png" width="500"/> 
+  <p><b>RTL Code of module demux_generate</b></p>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="./Images/27_demux_generate_gtk-simu.png" alt="27_demux_generate_gtk-simu.png" width="1000" />
+  <p><b>RTL Simulation Output </b></p>
+</div>
+<br>
+
+
+<div align="center">
+  <img src="./Images/31_demux_gen_cells.png" alt="31_demux_gen_cells.png" width="800" />
+  <p><b>Cells as Infered by Yosys</b></p>
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="./Images/30_demux_gene_show.png" alt="30_demux_gene_show.png" width="1000" />
+  <p><b>Graphical Representation of Synthesized Netlist of module demux_generate</b></p>
+</div>
+
+<br>
+
+As We can observe both RTL simulated outputs & Synthesized netlist of `demux_case` & `demux_generate` the same.
 
 
