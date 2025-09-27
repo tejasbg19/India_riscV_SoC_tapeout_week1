@@ -36,6 +36,7 @@ else
 
 As output is not defined for condiition when `i0 = 0` , the output latches itself to previous value of `Y` which was `1` when `i0` becomes `0`
 
+
 <div align="center">
   <img src="./Images/2_incomp_if_cell.png" alt="2_incomp_if_cell.png" width="600" />
   <p><b>As Expected only 1 Dlatch is Infered by Yosys</b></p>
@@ -270,7 +271,9 @@ As output is not defined for condiition when `2'b11` , the output latches itself
   <p><b>RTL Simulation Output</b></p>
 </div>
 <br>
-The output for input `11` and `10` depends on the simulator & even synthesizer as this confuses compiler itself. 
+
+The output for input `11` depends on the simulator & even synthesizer as this confuses compiler itself and output just latched to its previous value.
+
 <br>
 
 <div align="center">
@@ -300,8 +303,6 @@ The output for input `11` and `10` depends on the simulator & even synthesizer a
   <p><b>Gate Level Simulation output of the Synthesized Netlist</b></p>
 </div>
 
-
----
-
+The output for input `11` follows `i3` in the synthesized netlist simulation where as it latched to previous value of output in RTL simulation.
 
 ---
