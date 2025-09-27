@@ -306,3 +306,59 @@ The output for input `11` depends on the simulator & even synthesizer as this co
 The output for input `11` follows `i3` in the synthesized netlist simulation where as it latched to previous value of output in RTL simulation. Even tough there were no inferred latched, the overlapping cases `2'b1?` caused a Synthesis–Simulation Mismatch.
 
 ---
+
+
+## 3. Looping Constructs  
+
+In Verilog, loops are powerful tools, but they must be used carefully since hardware is not the same as software. Loops in Verilog either **evaluate expressions inside an always block** or **generate repeated hardware structures**.  
+
+---
+
+### (a) `for` Loop  
+- **Usage:** Only allowed **inside an always block**.  
+- Purpose: To perform repetitive calculations or assignments during simulation.  
+- Does **not** create multiple hardware instances, only expands to repeated behavioral code.  
+
+**Generic Syntax:**  
+
+```verilog
+always @(posedge clk) begin  
+ for (i = 0; i < N; i = i + 1)  
+  array[i] = array[i] + 1;  
+end  
+```
+---
+
+### (b) `generate for` Loop  
+- **Usage:** Written **outside always blocks**.  
+- Purpose: To **instantiate hardware multiple times**.  
+- Commonly used for creating arrays of logic gates, adders, multiplexers, decoders, etc.  
+- Helps avoid writing repetitive module instantiations.  
+
+**Generic Syntax:**  
+
+```verilog
+genvar i;  
+generate  
+ for (i = 0; i < N; i = i + 1) begin : label  
+  module_name instance_name ( .port1(sig1), .port2(sig2) );  
+ end  
+endgenerate
+```
+
+---
+
+### Why We Use Loops in Hardware Design  
+- To simplify the description of repetitive structures.  
+- **For loop (inside always):** Handles indexing or iterative calculations.  
+- **Generate for loop:** Used to build scalable hardware such as:  
+  - Multiplexers (e.g., 8:1 mux built using multiple 2:1 muxes).  
+  - Decoders and encoders.  
+  - Arrays of adders, registers, or flip-flops.  
+
+Example:  
+- To design an 8:1 multiplexer using smaller 2:1 multiplexers, we can use a generate loop to instantiate 7 mux modules, automatically wiring them in a tree structure.  
+
+---  
+
+
