@@ -1,68 +1,64 @@
-# Day-04: GLS (Gate Level Simulation), Synthesis–Simulation Mismatches, Blocking vs Non-Blocking assignments
-
-
-## 1. What is GLS (Gate Level Simulation)?
-**Gate Level Simulation (GLS)** is the process of verifying the synthesized netlist of a design (after synthesis) rather than the RTL description.  
-It ensures:  
-- The logic of the synthesized netlist matches the original RTL design.  
-- The design meets timing if the netlist is **delay-annotated**.  
-- Helps catch any functional mismatches between RTL and gate-level code.  
-
-**Why we do GLS:**  
-- To verify logic correctness of the synthesized netlist.  
-- To ensure design meets timing when delays are annotated.  
-- To confirm equivalence between RTL simulation and synthesized netlist behavior.  
+# Day-04: GLS (Gate Level Simulation), Synthesis–Simulation Mismatches, Blocking vs Non-Blocking assignments  
 
 ---
 
-## 2. How to perform GLS using Icarus Verilog (iverilog)
-1. Obtain the synthesized netlist (gate-level Verilog file from Yosys or any synthesis tool).  
-2. Use the same testbench written for RTL verification.  
-3. Compile both the netlist and testbench using iverilog.  
-4. Dump simulation output into a `.vcd` file.  
-5. View the waveform in GTKWave.  
+## 1. GLS (Gate Level Simulation)  
 
-If the gate-level netlist has **delay annotations**, the GLS becomes **timing-aware**, and we can check both *functionality* and *timing*.  
-If there are no delays, GLS still verifies **functional correctness**.  
+**Definition:**  
+Gate Level Simulation (GLS) is the process of simulating the synthesized gate-level netlist instead of the RTL description.  
+
+**How to do GLS in Icarus Verilog (steps only):**  
+1. Write your RTL design and testbench.  
+2. Synthesize the RTL with Yosys → generate gate-level netlist.  
+3. Collect the following files:  
+   - Testbench (`tb.v`)  
+   - RTL code (`design.v`)  
+   - Synthesized netlist (`netlist.v`)  
+   - Primitive cells (`primitive.v`)  
+   - Gate-level modules from **sky130 PDK** (`my_lib/verilog_codes/` from Kunal sir’s repo).  
+4. Run `iverilog` with all the above files.  
+5. Generate VCD dump and open with GTKWave.  
+
+**Why GLS is needed?**  
+- To verify functional correctness of synthesized logic.  
+- To detect **synthesis–simulation mismatches**.  
+- If the gate-level modules are **timing-aware**, we can also verify **timing behavior** in addition to logic.  
 
 ---
 
-## 3. Synthesis–Simulation Mismatches  
-Sometimes RTL simulation passes, but GLS fails. These mismatches happen due to:  
+## 2. Types of Synthesis–Simulation Mismatches  
 
 ### (a) Missing Sensitivity List  
-If all required signals are not included in the sensitivity list of an always block, simulation may show stale values while synthesis assumes full sensitivity.  
+- If a signal is missing in the sensitivity list, RTL sim behaves like a **latch**.  
+- After synthesis, the same logic is implemented as a **MUX**, leading to mismatch.  
 
-Example (wrong):  
-always @(a or b)  
-   y = a & b & c;  
-
-Example (correct):  
-always @(a or b or c)  
-   y = a & b & c;  
+📷 *[Insert images here: code, testbench, RTL simulation waveform, inferred cells from Yosys, schematic view of netlist, generated netlist code, netlist simulation output]*  
 
 ---
 
 ### (b) Blocking vs Non-Blocking Assignments  
-- **Blocking (=):** Executes statements sequentially (one after the other).  
-- **Non-Blocking (<=):** All RHS values are evaluated first, then assignments happen in parallel at the end of the time step.  
 
-Blocking example:  
-always @(posedge clk) begin  
-   q = d;       // q updated immediately  
-   r = q;       // r gets new q (can cause mismatch)  
-end  
+**Blocking (`=`):**  
+- Executes sequentially, just like a C program.  
+- Commonly used for **combinational logic**.  
 
-Non-Blocking example:  
-always @(posedge clk) begin  
-   q <= d;      // q updated at end of time step  
-   r <= q;      // r gets old q (correct behavior for flops)  
-end  
+**Non-Blocking (`<=`):**  
+- RHS values are evaluated first, then all assignments update in parallel.  
+- Correct style for **sequential (flip-flop) logic**.  
+
+📷 *[Insert images here: code, testbench, RTL sim output, synthesized netlist, netlist simulation output]*  
 
 ---
 
 ### (c) Non-Standard Verilog Coding  
-Coding styles outside standard synthesizable Verilog (e.g., delays `#5`, infinite loops without sensitivity, latches from incomplete if/else) may simulate fine but synthesis tools either reject or interpret differently.  
-This creates mismatches between RTL simulation and gate-level results.  
+
+Some constructs simulate fine but are not synthesizable → tools either reject them or interpret differently.  
+
+Examples (in plain text):  
+- Using delays like `#5`.  
+- Infinite loops without proper sensitivity list.  
+- Incomplete if/else → unintended latches.  
+
+📷 *[Insert images here: code, testbench, RTL vs netlist simulation outputs]*  
 
 ---
