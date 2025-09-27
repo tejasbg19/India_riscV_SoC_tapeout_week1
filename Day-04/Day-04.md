@@ -7,17 +7,24 @@
 **Definition:**  
 Gate Level Simulation (GLS) is the process of simulating the synthesized gate-level netlist instead of the RTL description.  
 
-**How to do GLS in Icarus Verilog (steps only):**  
+**How to do GLS in Icarus Verilog :**  
 1. Write your RTL design and testbench.  
 2. Synthesize the RTL with Yosys → generate gate-level netlist.  
 3. Collect the following files:  
    - Testbench (`tb.v`)  
    - RTL code (`design.v`)  
    - Synthesized netlist (`netlist.v`)  
-   - Primitive cells (`primitive.v`)  
-   - Gate-level modules from **sky130 PDK** (`my_lib/verilog_codes/` from Kunal sir’s repo).  
+   - Primitive cells (`my_lib/verilog_model/primitives.v`)  
+   - Gate-level modules from **sky130 PDK** (`my_lib/verilog_model/sky130_fd_sc_hd.v` from Kunal sir’s repo).  
 4. Run `iverilog` with all the above files.  
-5. Generate VCD dump and open with GTKWave.  
+5. Generate VCD dump and open with GTKWave.
+
+```bash
+$ iverilog design.v tb.v ../my_lib/verilog_model/sky130_fd_sc_hd.v ../my_lib/verilog_model/primitives.v
+$ vvp a.out  # or ./a.out
+$ gtkwave name_of_file.vcd
+```
+ 
 
 **Why GLS is needed?**  
 - To verify functional correctness of synthesized logic.  
@@ -32,7 +39,48 @@ Gate Level Simulation (GLS) is the process of simulating the synthesized gate-le
 - If a signal is missing in the sensitivity list, RTL sim behaves like a **latch**.  
 - After synthesis, the same logic is implemented as a **MUX**, leading to mismatch.  
 
-📷 *[Insert images here: code, testbench, RTL simulation waveform, inferred cells from Yosys, schematic view of netlist, generated netlist code, netlist simulation output]*  
+| RTL Code of module ternary_operator_mux |  Test Bench of module ternary_operator_mux |
+|--------------------------------------------|------------------------------------------|
+| <img src="./Images/1a_ternary_mux_code.png" alt="1a_ternary_mux_code.png" width="500"/> | <img src="./Images/1b_ternary_mux_tb_code.png" alt="1b_ternary_mux_tb_code.png" width="500"/> | 
+<br>
+
+<div align="center">
+  <img src="./Images/1_ternary_mux_simu_gtk.png" alt="1_ternary_mux_simu_gtk.png" width="1000" />
+  <p><b>RTL Simulation Output</b></p>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="./Images/2_ternary_mux_cells.png" alt="2_ternary_mux_cells.png" width="600" />
+  <p><b>Number & Type of Cells as Infered by Yosys</b></p>
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="./Images/3_ternary_mux_show.png" alt="3_ternary_mux_show.png" width="1000" />
+  <p><b>Graphical Representation of Synthesized Netlist of module ternary_operator_mux</b></p>
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="./Images/3a_ternary_mux_netlist.png" alt="3a_ternary_mux_netlist.png" width="1000" />
+  <p><b>Synthesized Netlist of module ternary_operator_mux</b></p>
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="./Images/4_ternary_mux_GLS_simu_gtk.png" alt="4_ternary_mux_GLS_simu_gtk.png" width="1000" />
+  <p><b>Gate Level Simulation of the Synthesized Netlist of module ternary_operator_mux</b></p>
+</div>
+
+
 
 ---
 
