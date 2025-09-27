@@ -37,7 +37,8 @@ $ gtkwave name_of_file.vcd
 
 ### (a) Missing Sensitivity List  
 - If a signal is missing in the sensitivity list, RTL sim behaves like a **latch**.  
-- After synthesis, the same logic is implemented as a **MUX**, leading to mismatch.  
+- After synthesis, the same logic is implemented as a **MUX**, leading to mismatch.
+- **Example :**
 
 | RTL Code of module ternary_operator_mux |  Test Bench of module ternary_operator_mux |
 |--------------------------------------------|------------------------------------------|
@@ -68,7 +69,7 @@ $ gtkwave name_of_file.vcd
 
 
 <div align="center">
-  <img src="./Images/3a_ternary_mux_netlist.png" alt="3a_ternary_mux_netlist.png" width="1000" />
+  <img src="./Images/3a_ternary_mux_netlist.png" alt="3a_ternary_mux_netlist.png" width="600" />
   <p><b>Synthesized Netlist of module ternary_operator_mux</b></p>
 </div>
 
@@ -92,11 +93,12 @@ $ gtkwave name_of_file.vcd
 
 **Non-Blocking (`<=`):**  
 - RHS values are evaluated first, then all assignments update in parallel.  
-- Correct style for **sequential (flip-flop) logic**.  
+- Commonly used for **sequential (flip-flop) logic**.
+- **Example :**
 
-📷 *[Insert images here: code, testbench, RTL sim output, synthesized netlist, netlist simulation output]*  
 
----
+
+
 
 ### (c) Non-Standard Verilog Coding  
 
