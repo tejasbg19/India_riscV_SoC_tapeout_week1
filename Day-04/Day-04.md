@@ -97,6 +97,7 @@ $ gtkwave name_of_file.vcd
 </div>
 
 <br>
+
 As we can see even though the RTL coding style seems to be that of a `2:1 Mux`, the simulated output waveform seems to be reflecting a latched Mux where the output is sensing the input `I0` & `I1` only when there is change in state of select line `sel`. 
 
 <div align="center">
