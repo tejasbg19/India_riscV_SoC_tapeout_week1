@@ -317,9 +317,8 @@ In Verilog, loops are powerful tools, but they must be used carefully since hard
 ### (a) `for` Loop  
 - **Usage:** Only allowed **inside an always block**.  
 - Purpose: To perform repetitive calculations or assignments during simulation.  
-- Does **not** create multiple hardware instances, only expands to repeated behavioral code.  
-
-**Generic Syntax:**  
+- Does **not** create multiple hardware instances, only expands to repeated behavioral code.
+- **Generic Syntax:**  
 
 ```verilog
 always @(posedge clk) begin  
@@ -327,6 +326,54 @@ always @(posedge clk) begin
   array[i] = array[i] + 1;  
 end  
 ```
+
+- **Example**
+  
+<div align="center">
+<img src="./Images/22a_mux_generate_code.png" alt="14a_partial_case_assign_code.png" width="500"/> 
+  <p><b>RTL Code of module mux_generate</b></p>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="./Images/23_mux_generate_gtk_simu.png" alt="23_mux_generate_gtk_simu.png" width="1000" />
+  <p><b>RTL Simulation Output matches that of 4:1 Mux</b></p>
+</div>
+<br>
+
+
+<div align="center">
+  <img src="./Images/23b_mux_generate_cells.png" alt="23b_mux_generate_cells.png" width="800" />
+  <p><b>Cells as Infered by Yosys</b></p>
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="./Images/24_mux_generate_show.png" alt="24_mux_generate_show.png" width="1000" />
+  <p><b>Graphical Representation of Synthesized Netlist of module mux_generate</b></p>
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="./Images/24a_mux_generate_netlist.png" alt="24a_mux_generate_netlist.png" width="1000" />
+  <p><b>Synthesized Netlist of module mux_generate</b></p>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="./Images/25_mux_generate_GLS_simu_gtk.png" alt="25_mux_generate_GLS_simu_gtk.png" width="1000" />
+  <p><b>Gate Level Simulation of the Synthesized Netlist of module mux_generate</b></p>
+</div>
+
+This above output matches with the RTL simulated output of module `mux_generate` which intern matches with a `4:1 Mux`.
+<br>
+
 ---
 
 ### (b) `generate for` Loop  
