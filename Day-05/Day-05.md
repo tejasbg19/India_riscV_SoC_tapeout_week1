@@ -258,6 +258,50 @@ As output is not defined for condiition when `2'b11` , the output latches itself
 3. **Overlapping Case:**  
    - If two or more case items overlap (like using wildcards `2'b1?`), then multiple matches may occur.  
    - This can cause unintended priority or mismatches between simulation and synthesis.  
-   - Example images will be attached.  
+   - **Example :**  
+
+| RTL Code of module bad_case |  Test Bench of module bad_case |
+|--------------------------------------------|------------------------------------------|
+| <img src="./Images/17a_bad_mux_code.png" alt="17a_bad_mux_code.png" width="500"/> | <img src="./Images/17b_bad_mux_tb.png" alt="17b_bad_mux_tb.png" width="500"/> | 
+<br>
+
+<div align="center">
+  <img src="./Images/18_bad_case_gtk_simu.png" alt="18_bad_case_gtk_simu.png" width="1000" />
+  <p><b>RTL Simulation Output</b></p>
+</div>
+<br>
+The output for input `11` and `10` depends on the simulator & even synthesizer as this confuses compiler itself. 
+<br>
+
+<div align="center">
+  <img src="./Images/19_bad_case_cells.png" alt="19_bad_case_cells.png" width="800" />
+  <p><b>No Latch is Infered by Yosys</b></p>
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="./Images/20_bad_case_show.png" alt="20_bad_case_show.png" width="1000" />
+  <p><b>Graphical Representation of Synthesized Netlist of module bad_case</b></p>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="./Images/20a_bad_case_netlist.png" alt="20a_bad_case_netlist.png" width="800" />
+  <p><b>Synthesized Netlist of module bad_case</b></p>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="./Images/21_bad_case_GLS_gtk_simu.png" alt="21_bad_case_GLS_gtk_simu.png" width="800" />
+  <p><b>Gate Level Simulation output of the Synthesized Netlist</b></p>
+</div>
+
+
+---
+
 
 ---
