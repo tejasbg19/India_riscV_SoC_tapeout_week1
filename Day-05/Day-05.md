@@ -223,11 +223,13 @@ As output is not defined for condiition when `2'b11` , the output latches itself
    - If in one case branch not all variables are assigned, then the unassigned variable holds its previous value → latch inferred.  
    - **Example :**  
 
-| RTL Code of module partial_case_assign |  
-|--------------------------------------------|
-| <img src="./Images/14a_partial_case_assign_code.png" alt="14a_partial_case_assign_code.png" width="500"/> | 
+<div align="center">
+<img src="./Images/14a_partial_case_assign_code.png" alt="14a_partial_case_assign_code.png" width="500"/> 
+  <p><b>RTL Code of module partial_case_assign</b></p>
+</div>
 
 <br>
+
 <div align="center">
   <img src="./Images/9a_incomp_case_gtk1_10.png" alt="9a_incomp_case_gtk1_10.png" width="1000" />
   <p><b>RTL Simulation Output</b></p>
