@@ -12,7 +12,7 @@ This repository covers the basics of Verilog simulation using Icarus Verilog, an
 | 2   | Basic Understanding of Liberty (.lib) file, Hierarchical & Flat Synthesis, Flop Coding | [Day 2](./Day-02/Day-02.md)     |
 | 3   | Sequential & Combinational Logic Optimization  | [Day 3](./Day-03/Day-03.md)     |
 | 4   | GLS (Gate Level Simulation), Synthesis–Simulation Mismatches, Blocking vs Non-Blocking assignments  | [Day 4](./Day-04/Day-04.md)     |
-| 5   | ~Gate-level simulation (GLS) & comparison with RTL~| [Day 5](./Day-05/Day-05.md)     |
+| 5   | ~Gate-level simulation (GLS) & comparison with RTL~  >Still Going on | [Day 5](./Day-05/Day-05.md)     |
 
 ---
 
@@ -36,3 +36,4 @@ This repository covers the basics of Verilog simulation using Icarus Verilog, an
 
 ## Contact Information
 - Tejas B G: [tejasbg13rvpu@gmail.com](mailto:tejasbg13rvpu@gmail.com)
+- A Student of Department of Electronics & Communication Engineering at Dayananda Sagar Academy Of Technology & Management, Bengaluru.
