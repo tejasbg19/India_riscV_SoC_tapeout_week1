@@ -221,12 +221,37 @@ As output is not defined for condiition when `2'b11` , the output latches itself
 
 2. **Partial Assignment in Case:**  
    - If in one case branch not all variables are assigned, then the unassigned variable holds its previous value → latch inferred.  
-   - Example (in text):  
-     case (sel)  
-  2'b00 : a = x; b = y;  
-  2'b01 : a = z; // b not assigned → latch inferred for b  
-  default : a = 0; b = 0;  
-     endcase  
+   - **Example :**  
+
+| RTL Code of module partial_case_assign |  
+|--------------------------------------------|
+| <img src="./Images/14a_partial_case_assign_code.png" alt="14a_partial_case_assign_code.png" width="500"/> | 
+
+<br>
+<div align="center">
+  <img src="./Images/9a_incomp_case_gtk1_10.png" alt="9a_incomp_case_gtk1_10.png" width="1000" />
+  <p><b>RTL Simulation Output</b></p>
+</div>
+<br>
+
+
+<div align="center">
+  <img src="./Images/15_partial_case_assign_cells.png" alt="15_partial_case_assign_cells.png" width="800" />
+  <p><b>As Expected only a single D-latch is Infered by Yosys</b></p>
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="./Images/16_partial_case_assign_show.png" alt="16_partial_case_assign_show.png" width="1000" />
+  <p><b>Graphical Representation of Synthesized Netlist of module partial_case_assign</b></p>
+</div>
+
+<br>
+
+---
+
 
 3. **Overlapping Case:**  
    - If two or more case items overlap (like using wildcards `2'b1?`), then multiple matches may occur.  
