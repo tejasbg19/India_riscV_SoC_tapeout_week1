@@ -22,12 +22,42 @@ else
 - Latches are dangerous in synchronous designs because they cause timing and metastability issues.  
 
 **Example (incomplete if causing latch):**  
-```verilg
-always @(a or b)  
- if (a)  
-  y = b;  
-// missing else → latch inferred for y
-```  
+
+| RTL Code of module incomp_if |  Test Bench of module incomp_if |
+|--------------------------------------------|------------------------------------------|
+| <img src="./Images/1a_incomp_if_code.png" alt="1a_ternary_mux_code.png" width="500"/> | <img src="./Images/1b_incomp_if_tb.png" alt="1b_ternary_mux_tb_code.png" width="500"/> | 
+<br>
+
+<div align="center">
+  <img src="./Images/1_incomp_if_gtk_simu.png" alt="1_incomp_if_gtk_simu.png" width="1000" />
+  <p><b>RTL Simulation Output</b></p>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="./Images/2_incomp_if_cell.png" alt="2_incomp_if_cell.png" width="600" />
+  <p><b>As Expected only 1 Dlatch is Infered by Yosys</b></p>
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="./Images/3_incomp_if_show.png" alt="3_incomp_if_show.png" width="1000" />
+  <p><b>Graphical Representation of Synthesized Netlist of module incomp_if</b></p>
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="./Images/3a_incomp_if_netlist.png" alt="3a_incomp_if_netlist.png" width="800" />
+  <p><b>Synthesized Netlist of module incomp_if</b></p>
+</div>
+
+<br>
+
 
 **Note:**  
 - `if` statements and `case` statements are written **inside an always block**.  
